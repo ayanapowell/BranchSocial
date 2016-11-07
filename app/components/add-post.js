@@ -3,13 +3,14 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   actions: {
     savePost() {
-      var date = moment("20161106","YYYYMMDD").fromNow();
+      var date = moment();
       var params = {
         post: this.get('post'),
-        date: date
+        date: date,
+        member: this.get('member')
       }
-      console.log(params['date']);
       $('#add-post').trigger('reset');
+      console.log(params);
       this.sendAction('savePost', params);
     }
   }

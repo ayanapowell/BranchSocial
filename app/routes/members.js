@@ -24,6 +24,16 @@ export default Ember.Route.extend({
     destroyMember(member){
       member.destroyRecord();
       this.transitionTo('index');
+    },
+    savePost(params) {
+      console.log(params);
+      var newPost = this.store.createRecord('post', params);
+      var member = params['member'];
+      member.get('posts').addObject(newPost);
+      newPost.save().then(function() {
+        return member.save();
+      });
+      this.transitionTo('members');
     }
   }
 });
