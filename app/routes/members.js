@@ -16,7 +16,6 @@ export default Ember.Route.extend({
       this.transitionTo('members');
     },
     editInfo(member, params){
-      // alert("hi");
       console.log(member.get('firstName'));
       Object.keys(params).forEach(function(key){
         if(params[key] !== undefined){

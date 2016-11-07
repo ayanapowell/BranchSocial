@@ -6,7 +6,7 @@ export default Ember.Component.extend({
       var params = {
         firstName: this.get('editFirstName'),
         lastName: this.get('editLastName'),
-        screenName: this.get('editDisplayName'),
+        screenName: this.get('editScreenName'),
         city: this.get('editCity'),
         state: this.get('editState'),
         zipCode: this.get('editZipCode'),
