@@ -13,6 +13,9 @@ export default Ember.Component.extend({
         avatar: this.get('editAvatar'),
       };
       this.sendAction('editInfo',member, params);
+    },
+    destroyMember(member){
+      this.sendAction('destroyMember', member);
     }
   }
 });

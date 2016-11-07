@@ -9,12 +9,7 @@ export default Ember.Route.extend({
     })
   },
   actions: {
-    signUp(params){
-      var newMember = this.store.createRecord('member', params);
-      newMember.save();
-      alert("member saved?");
-      this.transitionTo('members');
-    },
+    
     editInfo(member, params){
       console.log(member.get('firstName'));
       Object.keys(params).forEach(function(key){
@@ -24,6 +19,10 @@ export default Ember.Route.extend({
       });
       member.save();
       this.transitionTo('members');
+    },
+    destroyMember(member){
+      member.destroyRecord();
+      this.transitionTo('index');
     }
   }
 

@@ -13,6 +13,13 @@ export default Ember.Route.extend({
         console.log(err);
       });
     },
+    registerMember(params){
+      var newMember = this.store.createRecord('member', params);
+      console.log(newMember.get('firstName'));
+      newMember.save();
+      alert("member saved?");
+      this.transitionTo('members');
+    },
     signIn: function(provider, params) {
       if (params === undefined) {
         params = {

@@ -6,7 +6,7 @@
   <label for="">Last Name:</label>
   {{input value=newLastName id="newLastName" class="form-control"}}
   <label for="">Screen Name:</label>
-  {{input value=session.currentUser.displayName id="ScreenName" class="form-control"}}
+  {{input value=session.currentUser.displayName id="newScreenName" class="form-control"}}
   <label for="">City:</label>
   {{input value=newCity id="newCity" class="form-control"}}
   <label for="">State:</label>
@@ -15,5 +15,5 @@
   {{input value=newZipCode id="newZipCode" class="form-control"}}
   <label for="">Avatar:</label>
   {{input value=session.currentUser.photoURL id="newAvatar" class="form-control"}}
-  <button {{action "signUp"}}>Sign Up</button>
+  <button {{action "registerMember"}}>Sign Up</button>
 </div>
