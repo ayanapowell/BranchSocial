@@ -1,8 +1,6 @@
-
-
 {{edit-member editInfo="editInfo" destroyMember="destroyMember" member=model.member}}
-{{add-post savePost="savePost"}}
+{{add-post savePost="savePost" member=model.member}}
 {{model.member.screenName}}
-{{#each model.member.posts as |post|}}
-  {{post-tile post=post}}
-{{/each}}
+Your feed:<br><br>
+  {{post-tile member=model.member}}
+<br><br>
