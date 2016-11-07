@@ -9,5 +9,5 @@ export default DS.Model.extend({
   zipCode: DS.attr(),
   avatar: DS.attr(),
   friends: DS.hasMany('member', {async:true}),
-  id: DS.attr()
+  // id: DS.attr()
 });
