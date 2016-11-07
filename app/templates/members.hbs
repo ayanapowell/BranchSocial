@@ -1,10 +1,7 @@
-{{new-member signUp="signUp"}}
-{{edit-member editInfo="editInfo" member=model.member}}
+
+
+{{edit-member editInfo="editInfo" destroyMember="destroyMember" member=model.member}}
 {{add-post savePost="savePost"}}
-<<<<<<< HEAD
-{{model.member.screenName}}
-=======
 {{#each model as |member|}}
   {{show-feed member=member}}
 {{/each}}
->>>>>>> biggy

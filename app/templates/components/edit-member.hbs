@@ -2,18 +2,22 @@
 <div class="well">
   <h3>Edit Information: </h3>
   <label for="">First Name:</label>
-  {{input value=editFirstName id="editFirstName" class="form-control"}}
+  {{input value=editFirstName id="editFirstName" class="form-control" placeholder=member.firstName}}
   <label for="">Last Name:</label>
-  {{input value=editLastName id="editLastName" class="form-control"}}
+  {{input value=editLastName id="editLastName" class="form-control" placeholder=member.lastName}}
   <label for="">Screen Name:</label>
-  {{input value=editDisplayName id="editDisplayName" class="form-control"}}
+  {{input value=editScreenName id="editScreenName" class="form-control" placeholder=member.screenName}}
   <label for="">City:</label>
-  {{input value=editCity id="editCity" class="form-control"}}
+  {{input value=editCity id="editCity" class="form-control" placeholder=member.city}}
   <label for="">State:</label>
-  {{input value=editState id="editState" class="form-control"}}
+  {{input value=editState id="editState" class="form-control" placeholder=member.state}}
   <label for="">Zip Code:</label>
-  {{input value=editZipCode id="editZipCode" class="form-control"}}
+  {{input value=editZipCode id="editZipCode" class="form-control" placeholder=member.zipCode}}
   <label for="">Avatar:</label>
-  {{input value=editAvatar id="editAvatar" class="form-control"}}
+  {{input value=editAvatar id="editAvatar" class="form-control" placeholder=member.avatar}}
   <button {{action "editInfo" member}}>Sign Up</button>
+</div>
+
+<div class="well">
+  <button {{action "destroyMember" member}} class="btn btn-danger">Terminate my membership</button>
 </div>
