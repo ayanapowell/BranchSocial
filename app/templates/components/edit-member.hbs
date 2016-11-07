@@ -1,0 +1,19 @@
+
+<div class="well">
+  <h3>Edit Information: </h3>
+  <label for="">First Name:</label>
+  {{input value=editFirstName id="editFirstName" class="form-control"}}
+  <label for="">Last Name:</label>
+  {{input value=editLastName id="editLastName" class="form-control"}}
+  <label for="">Screen Name:</label>
+  {{input value=editDisplayName id="editDisplayName" class="form-control"}}
+  <label for="">City:</label>
+  {{input value=editCity id="editCity" class="form-control"}}
+  <label for="">State:</label>
+  {{input value=editState id="editState" class="form-control"}}
+  <label for="">Zip Code:</label>
+  {{input value=editZipCode id="editZipCode" class="form-control"}}
+  <label for="">Avatar:</label>
+  {{input value=editAvatar id="editAvatar" class="form-control"}}
+  <button {{action "editInfo" member}}>Sign Up</button>
+</div>
