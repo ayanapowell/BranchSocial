@@ -13,8 +13,14 @@ export default Ember.Route.extend({
         console.log(err);
       });
     },
-    signIn: function(provider) {
-      this.get('session').open('firebase', { provider: provider}).then(function(data) {
+    signIn: function(provider, params) {
+      if (params === undefined) {
+        params = {
+          email: '',
+          password: ''
+        }
+      }
+      this.get('session').open('firebase', { provider: provider, email: params.email, password: params.password}).then(function(data) {
         console.log(data);
       });
     },
