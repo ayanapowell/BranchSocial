@@ -2,6 +2,7 @@
 
 {{edit-member editInfo="editInfo" destroyMember="destroyMember" member=model.member}}
 {{add-post savePost="savePost"}}
-{{#each model as |member|}}
-  {{show-feed member=member}}
+{{model.member.screenName}}
+{{#each model.member.posts as |post|}}
+  {{post-tile post=post}}
 {{/each}}
