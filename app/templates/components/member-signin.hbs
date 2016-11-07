@@ -1,0 +1,15 @@
+<div>
+  <h3>Log in with GitHub</h3>
+  <button {{action "githubSignIn" "github"}}>Log in with Github</button>
+  <hr>
+  <h3>Log in with Email</h3>
+  <div class='form-group'>
+    <label>Email:</label>
+    {{input id="email" value=email class='form-control' enter="emailSignIn"}}
+  </div>
+  <div class='form-group'>
+    <label>Password:</label>
+    {{input id="password" value=password type='password' class='form-control' enter="emailSignIn"}}
+  </div>
+  <button {{action "emailSignIn"}}>Log In!</button>
+</div>
