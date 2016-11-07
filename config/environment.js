@@ -13,6 +13,18 @@ module.exports = function(environment) {
       }
     },
 
+    torii: {
+      sessionServiceName: 'session'
+    },
+
+    firebase: {
+      apiKey: "AIzaSyCHF07tui8tZBXgn-zAwiIRbg6sODKqveU",
+      authDomain: "branch-social.firebaseapp.com",
+      databaseURL: "https://branch-social.firebaseio.com",
+      storageBucket: "branch-social.appspot.com",
+      messagingSenderId: "870321402048"
+    },
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
