@@ -10,7 +10,7 @@ export default Ember.Component.extend({
           messageText: this.get('messageText'),
           memberName: this.get('member').get('firstName'),
           date: moment(),
-          chatroomId: this.get('chatroom').get('id')
+          chatroom: this.get('chatroom')
         };
         this.sendAction('sendMessage', params);
         $('#messageNew').trigger('reset');

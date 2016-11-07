@@ -4,5 +4,5 @@ export default DS.Model.extend({
   messageText: DS.attr(),
   memberName: DS.attr(),
   date: DS.attr('string'),
-  chatroomId: DS.attr()
+  chatroom: DS.belongsTo('chatroom', { async:true })
 });

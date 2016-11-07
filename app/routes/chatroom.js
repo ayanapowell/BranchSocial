@@ -13,7 +13,11 @@ export default Ember.Route.extend({
   actions: {
     sendMessage(params){
       var newMessage = this.store.createRecord('message', params);
-      newMessage.save();
+      var chatroom = params.chatroom;
+      chatroom.get('messages').addObject(newMessage);
+      newMessage.save().then(function(){
+        return chatroom.save();
+      });
     }
   }
 });
