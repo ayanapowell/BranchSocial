@@ -1,16 +1,12 @@
 
-
+{{log session.currentUser}}
 <div class="well">
   <label for="">First Name:</label>
   {{input value=newFirstName id="newFirstName" class="form-control"}}
   <label for="">Last Name:</label>
   {{input value=newLastName id="newLastName" class="form-control"}}
   <label for="">Screen Name:</label>
-  {{input value=newScreenName id="ScreenName" class="form-control"}}
-  <label for="">Email:</label>
-  {{input value=newEmail id="newEmail" class="form-control"}}
-  <label for="">Password:</label>
-  {{input value=newPassword id="newPassword" class="form-control"}}
+  {{input value=session.currentUser.displayName id="ScreenName" class="form-control"}}
   <label for="">City:</label>
   {{input value=newCity id="newCity" class="form-control"}}
   <label for="">State:</label>
@@ -18,6 +14,6 @@
   <label for="">Zip Code:</label>
   {{input value=newZipCode id="newZipCode" class="form-control"}}
   <label for="">Avatar:</label>
-  {{input value=newAvatar id="newAvatar" class="form-control"}}
+  {{input value=session.currentUser.photoURL id="newAvatar" class="form-control"}}
   <button {{action "signUp"}}>Sign Up</button>
 </div>
