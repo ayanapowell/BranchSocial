@@ -26,6 +26,7 @@ export default Ember.Route.extend({
     },
     signOut: function() {
       this.get('session').close();
+      this.transitionTo('index');
     }
   }
 });
