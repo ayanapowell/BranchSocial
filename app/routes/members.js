@@ -16,7 +16,6 @@ export default Ember.Route.extend({
       this.transitionTo('members');
     },
     editInfo(member, params){
-      // alert("hi");
       console.log(member.get('firstName'));
       Object.keys(params).forEach(function(key){
         if(params[key] !== undefined){
@@ -27,9 +26,10 @@ export default Ember.Route.extend({
       this.transitionTo('members');
     },
     savePost(params) {
+      console.log(params);
       var newPost = this.store.createRecord('post', params);
-      var member = params.member;
-      member.get('posts').addObject(newPost); // or member.get('post') ??
+      var member = params['member'];
+      member.get('posts').addObject(newPost);
       newPost.save().then(function() {
         return member.save();
       });
