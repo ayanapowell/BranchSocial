@@ -1,2 +1,5 @@
 {{new-member signUp="signUp"}}
 {{add-post savePost="savePost"}}
+{{#each model as |member|}}
+  {{show-feed member=member}}
+{{/each}}
