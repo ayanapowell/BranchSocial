@@ -2,10 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   session: Ember.inject.service(),
-  
+
   model(params){
     return Ember.RSVP.hash({
-      chatroom: this.store.findRecord('chatroom', params.chatroom_id),
+      group: this.store.findRecord('group', params.group_id),
       member: this.store.findRecord('member', this.get('session').get('currentUser').uid)
     })
   },
@@ -13,10 +13,10 @@ export default Ember.Route.extend({
   actions: {
     sendMessage(params){
       var newMessage = this.store.createRecord('message', params);
-      var chatroom = params.chatroom;
-      chatroom.get('messages').addObject(newMessage);
+      var group = params.group;
+      group.get('messages').addObject(newMessage);
       newMessage.save().then(function(){
-        return chatroom.save();
+        return group.save();
       });
     }
   }

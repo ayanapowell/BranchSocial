@@ -11,5 +11,6 @@ export default DS.Model.extend({
   email: DS.attr(),
   // friends: DS.hasMany('member', {async:true}),
   // posts: DS.hasMany('post', {async:true})
-  posts: DS.hasMany('post', {async:true})
+  posts: DS.hasMany('post', {async:true}),
+  groups: DS.hasMany('group', { async: true })
 });

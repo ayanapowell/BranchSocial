@@ -7,7 +7,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('members');
-  this.route('chatroom', {path: '/chatroom/:chatroom_id'});
+  this.route('group', {path: '/group/:group_id'});
 });
 
 export default Router;
