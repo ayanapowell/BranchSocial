@@ -6,7 +6,7 @@
 </form>
 
 {{#if foundMember}}
-  <p>Found Member: {{foundMember.screenName}} <button {{action 'addToGroup' foundMember}}>Add to group!</button></p>
+  <p>Found Member: {{foundMember.screenName}} <button {{action 'addToGroup' foundMember group}}>Add to group!</button></p>
   <ul>
     <li>{{foundMember.firstName}}({{foundMember.screenName}})</li>
   </ul>
