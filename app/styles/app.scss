@@ -29,6 +29,12 @@ a:hover {
   color: $white;
 }
 
+.well {
+  background-color: $white;
+  border: none !important;
+  box-shadow: 1.5px 1.5px #ccc;
+}
+
 #terminateButton {
   background-color: $yellow-orange;
   color: $white;
