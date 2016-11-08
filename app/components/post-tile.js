@@ -15,7 +15,12 @@ export default Ember.Component.extend({
       this.sendAction('updatePost', params, post);
     },
     showForm() {
-      this.set('showForm', true);
+      if (this.showForm === false) {
+        this.set('showForm', true);
+      } else {
+        this.set('showForm', false);
+      }
+
     }
   }
 });
