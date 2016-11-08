@@ -27,7 +27,8 @@ a:hover {
 .ui.inverted.menu {
   background-color: $ocean-green;
   font-family: 'Ubuntu', sans-serif !important;
-  height: 50px;
+  height: 46px;
+  border-radius: 0px !important;
 }
 
 .ui.button {
@@ -66,13 +67,17 @@ a:hover {
 
 #header {
   background-color: $ocean-green;
-  padding: 10px;
   margin-bottom: -60px;
 }
 
 #logo {
-  width: 15%;
-  height: auto;
+  margin-left: 100px;
+  margin-bottom: 0;
+}
+
+#triangle{
+  margin-left: 100px;
+  margin-top: -23px !important;
 }
 
 .profile-detail img {
