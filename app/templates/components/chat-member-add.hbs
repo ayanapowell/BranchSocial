@@ -11,3 +11,10 @@
     <li>{{foundMember.firstName}}({{foundMember.screenName}})</li>
   </ul>
 {{/if}}
+
+<h4>Group Members</h4>
+<ul>
+  {{#each members as |member|}}
+    <li>{{member.screenName}}</li>
+  {{/each}}
+</ul>
