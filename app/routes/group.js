@@ -20,15 +20,17 @@ export default Ember.Route.extend({
       });
     },
     addMemberToGroup(foundMember, group) {
-      var currentGroup = group;
-      console.log(currentGroup);
-      console.log(foundMember);
-      foundMember.get('groups').addObject(currentGroup);
-      currentGroup.get('members').addObject(foundMember);
-      console.log(foundMember.get('groups'));
-      console.log(currentGroup.get('members'));
+      foundMember.get('groups').addObject(group);
+      group.get('members').addObject(foundMember);
       foundMember.save().then(function() {
-        return currentGroup.save();
+        return group.save();
+      })
+    },
+    removeMemberFromGroup(member, group) {
+      member.get('groups').removeObject(group);
+      group.get('members').removeObject(member);
+      member.save().then(function() {
+        return group.save();
       })
     }
   }

@@ -15,6 +15,6 @@
 <h4>Group Members</h4>
 <ul>
   {{#each members as |member|}}
-    <li>{{member.screenName}}</li>
+    <li>{{member.screenName}} <button {{action 'removeFromGroup' member group}}>Remove</button></li>
   {{/each}}
 </ul>
