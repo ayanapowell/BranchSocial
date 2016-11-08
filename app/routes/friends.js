@@ -10,7 +10,7 @@ export default Ember.Route.extend({
     })
   },
   actions:{
-    sendFriendRequest(listMember, member){
+    addFriend(listMember, member){
       listMember.get('friends').addObject(member).then(function(){
         member.get('friends').addObject(listMember).then(function(){
           listMember.save();

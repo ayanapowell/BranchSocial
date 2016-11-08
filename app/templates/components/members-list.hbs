@@ -2,7 +2,7 @@
 <h3>All members</h3>
 
 {{#each members as |listMember|}}
-<li>{{listMember.firstName}} {{listMember.lastName}} - {{listMember.screenName}}<button {{action "sendFriendRequest" listMember member}} class="btn btn-success">+ Add Friend </button></li>
+<li>{{listMember.firstName}} {{listMember.lastName}} - {{listMember.screenName}}<button {{action "addFriend" listMember member}} class="btn btn-success">+ Add Friend </button></li>
 {{/each}}
 
 </div>
