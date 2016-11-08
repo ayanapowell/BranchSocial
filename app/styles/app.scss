@@ -1,6 +1,6 @@
 $ocean-green: #4AA772;
 $astral-blue: #3688A4;
-$yellow-orange: #FC9B45;
+$texas-rose: #FFAC55;
 $white: #FFF;
 $black: #000;
 $silver: #ccc;
@@ -55,8 +55,9 @@ a:hover {
 }
 
 #terminate-button {
-  background-color: $yellow-orange;
-  color: $white;
+  color: $texas-rose;
+  background-color: $white;
+  border: 1px solid $texas-rose;
 }
 
 #footer {
