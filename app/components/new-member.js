@@ -14,7 +14,9 @@ export default Ember.Component.extend({
         state: this.get('newState'),
         zipCode: this.get('newZipCode'),
         avatar: $("#newAvatar").val(),
+        email: this.get('session').get('currentUser').email,
         id: this.get('session').get('currentUser').uid,
+
       };
       console.log(params);
       if(params['firstName'] && params['lastName'] && params['screenName'] && params['city'] && params['state'] && params['zipCode']){

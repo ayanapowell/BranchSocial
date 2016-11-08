@@ -1,0 +1,14 @@
+<div class="well">
+<h3>All members</h3>
+
+{{#each members as |listMember|}}
+<li>{{listMember.firstName}} {{listMember.lastName}} - {{listMember.screenName}}<button {{action "sendFriendRequest" listMember member}} class="btn btn-success">+ Add Friend </button></li>
+{{/each}}
+
+</div>
+<div class="well">
+  <h3>My friends</h3>
+  {{#each member.friends as |friend|}}
+  <li>{{friend.firstName}} {{friend.lastName}} - {{friend.screenName}} <button {{action "removeFriend" friend member}} class="btn btn-danger"> Remove Friend :( </button></li>
+  {{/each}}
+</div>

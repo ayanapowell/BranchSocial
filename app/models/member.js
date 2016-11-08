@@ -8,7 +8,7 @@ export default DS.Model.extend({
   state: DS.attr(),
   zipCode: DS.attr(),
   avatar: DS.attr(),
-  // friends: DS.hasMany('member', {async:true}),
-  // posts: DS.hasMany('post', {async:true})
+  email: DS.attr(),
+  friends: DS.hasMany('member', {async:true}),
   posts: DS.hasMany('post', {async:true})
 });
