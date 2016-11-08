@@ -1,16 +1,4 @@
 <div class="container">
   <h2 id="title" class="jumbotron">Welcome to Branch!</h2>
-  {{#if session.isAuthenticated}}
-    Logged in as {{session.currentUser.displayName}}
-    <button {{action "signOut"}}>Sign out</button>
-  {{else}}
-    {{member-signup signIn="signIn" signUp="signUp"}}
-    {{member-signin signIn="signIn"}}
-  {{/if}}
-
-
-</div>
-{{new-member registerMember="registerMember"}}
-<div class="container">
   {{outlet}}
 </div>

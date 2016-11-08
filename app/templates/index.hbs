@@ -1,1 +1,20 @@
-{{log session.currentUser.displayName}}
+
+<!-- More info about our site. Why you should sign up! -->
+
+{{#if session.isAuthenticated}}
+  {{new-member registerMember="registerMember"}}
+
+  {{#link-to 'members'}}MEMBERS ROUTE LINK{{/link-to}}<br>
+
+  Logged in as {{session.currentUser.displayName}} <!-- keep this just for now for verification -->
+  <button {{action "signOut"}}>Sign out</button>  <!-- move this to nav bar? -->
+{{else}}
+  <div class='col-sm-6'>
+    <h2>Sign Up</h2>
+    {{member-signup signIn="signIn" signUp="signUp"}}
+  </div>
+  <div class='col-sm-6'>
+    <h2>Log In</h2>
+    {{member-signin signIn="signIn"}}
+  </div>
+{{/if}}

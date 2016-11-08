@@ -1,9 +1,12 @@
-
-{{search-member members=model.members search="search"}}<br>
-{{edit-member editInfo="editInfo" destroyMember="destroyMember" member=model.member}}
-{{add-post savePost="savePost" member=model.member}}
-{{model.member.screenName}}
-Your feed:<br><br>
-  {{post-tile member=model.member}}
-<br><br>
-{{display-results seach="search"}}
+{{#if model.member}}
+  {{search-member members=model.members search="search"}}<br>
+  {{edit-member editInfo="editInfo" destroyMember="destroyMember" member=model.member}}
+  {{add-post savePost="savePost" member=model.member}}
+  {{model.member.screenName}}
+  Your feed:<br><br>
+    {{post-tile member=model.member}}
+  <br><br>
+  {{display-results seach="search"}}
+{{else}}
+  <p>show form</p>
+{{/if}}

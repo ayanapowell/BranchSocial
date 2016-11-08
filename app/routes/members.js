@@ -2,10 +2,18 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   session: Ember.inject.service(),
+  beforeModel: function() {
+    // var _this = this;
+    return this.get('session').fetch().catch(function() {
+      // _this.transitionTo('index'); // -- REDIRECT TO INDEX ROUTE TO LOG IN IF NO CURRENT SESSION
+    });
+  },
   model(){
     return Ember.RSVP.hash({
       member: this.store.findRecord('member', this.get('session').get('currentUser').uid),
       members: this.store.findAll('member'),
+    }).catch(function(err) {
+      console.log(err);
     })
   },
   actions: {
