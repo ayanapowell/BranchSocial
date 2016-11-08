@@ -1,6 +1,6 @@
 import { moduleForModel, test } from 'ember-qunit';
 
-moduleForModel('friend-request', 'Unit | Model | friend request', {
+moduleForModel('request', 'Unit | Model | request', {
   // Specify the other units that are required for this test.
   needs: []
 });

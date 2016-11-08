@@ -10,5 +10,6 @@ export default DS.Model.extend({
   avatar: DS.attr(),
   email: DS.attr(),
   friends: DS.hasMany('member', {async:true}),
-  posts: DS.hasMany('post', {async:true})
+  posts: DS.hasMany('post', {async:true}),
+  requests: DS.hasMany('request', {async:true}),
 });

@@ -4,7 +4,6 @@ export default Ember.Component.extend({
   session: Ember.inject.service(),
   actions: {
     registerMember(){
-      alert("1");
 
       var params = {
         firstName: this.get('newFirstName'),
