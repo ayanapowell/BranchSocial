@@ -9,8 +9,6 @@ export default Ember.Component.extend({
       if (this.get('messageText') !== '' && this.get('messageText') !== undefined){
         var isMember = false;
         this.get('group').get('members').forEach(function(member) {
-          console.log(member.get('id'));
-          console.log(_this.get('session').get('currentUser'));
           if (member.get('id') === _this.get('session').get('currentUser').uid) {
             isMember = true;
           }
