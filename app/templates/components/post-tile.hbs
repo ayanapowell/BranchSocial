@@ -1,4 +1,12 @@
-<div class="well post-tile">
+<div class="well">
+  {{member.firstName}}
+  {{member.avatar}}
+  {{#each member.posts as |post|}}
+      {{post.date}} - {{post.content}}
+  {{/each}}
+</div>
+
+<!-- <div class="well post-tile">
   <div class="row">
     <div class="col-md-3">
       {{model.avatar}}
@@ -9,9 +17,14 @@
           {{model.screenName}}
         </div>
         <div class="col-md-12">
+          {{post.date}}
+        </div>
+        <div class="col-md-12">
             {{posts.content}}
         </div>
       </div>
     </div>
   </div>
-</div>
+</div> -->
+<!-- {{post.date}} - {{post.content}}
+{{member.firstName}} -->
