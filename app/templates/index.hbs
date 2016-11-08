@@ -6,6 +6,8 @@
 
   Logged in as {{session.currentUser.displayName}} <!-- keep this just for now for verification -->
 
+  <button class="ui button" {{action "signOut"}}>Sign out</button>  <!-- move this to nav bar? -->
+
 {{else}}
   <div class='col-sm-6'>
     <h2>Sign Up</h2>

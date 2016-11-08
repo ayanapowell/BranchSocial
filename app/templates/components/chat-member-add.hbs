@@ -2,7 +2,7 @@
 <form id="searchName">
   <label>Input member's screenname:</label>
   {{input value=searchTerm}}
-  <button {{action 'searchName'}}>Search</button>
+  <button class="ui button" {{action 'searchName'}}>Search</button>
 </form>
 
 {{#if foundMember}}

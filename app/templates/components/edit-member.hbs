@@ -15,9 +15,9 @@
   {{input value=editZipCode id="editZipCode" class="form-control" placeholder=member.zipCode}}
   <label for="">Avatar:</label>
   {{input value=editAvatar id="editAvatar" class="form-control" placeholder=member.avatar}}
-  <button {{action "editInfo" member}}>Update</button>
+  <button class="ui button" {{action "editInfo" member}}>Sign Up</button>
 </div>
 
 <div class="well">
-  <button {{action "destroyMember" member}} class="btn btn-danger">Terminate my membership</button>
+  <button {{action "destroyMember" member}} id="terminate-button" class="ui button" >Terminate my membership</button>
 </div>

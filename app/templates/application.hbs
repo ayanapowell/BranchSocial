@@ -1,5 +1,24 @@
+<header id="header">
+  <h3>{{#link-to 'index'}}<img id="logo" src="/assets/images/logo-white.png">{{/link-to}}</h3>
+</header>
+
+<div class="ui inverted menu">
+  <div id="sign-in-nav" class="item">
+    Sign In
+  </div>
+  <div class="item">
+    Search
+  </div>
+  <div class="item">
+    Test
+  </div>
+</div>
+
 <div class="container">
-  <h2 id="title" class="jumbotron">Welcome to Branch!</h2>
   {{outlet}}
   <button {{action "signOut"}}>Sign out</button>
 </div>
+
+<footer id="footer">
+  <h6>&copy; 2016 pdxBranch</h6>
+</footer>

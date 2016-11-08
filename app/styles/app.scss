@@ -1,5 +1,78 @@
+$ocean-green: #4AA772;
+$astral-blue: #3688A4;
+$yellow-orange: #FC9B45;
+$white: #FFF;
+$black: #000;
+$silver: #ccc;
+
 body {
-  font-family: monospace;
+  font-family: 'Ubuntu', sans-serif !important;
+  background-image: url('/assets/images/subtle-texture.jpg');
+  background-repeat: repeat;
+}
+
+h3 {
+  font-family: 'Ubuntu', sans-serif !important;
+}
+
+a {
+  color: $ocean-green;
+}
+
+a:hover {
+  color: $ocean-green;
+  text-decoration: underline;
+}
+
+.ui.inverted.menu {
+  background-color: $ocean-green;
+  font-family: 'Ubuntu', sans-serif !important;
+  height: 50px;
+}
+
+.ui.button {
+  font-family: 'Ubuntu', sans-serif !important;
+  background-color: $astral-blue;
+  color: $white;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+.well {
+  background-color: $white;
+  border: none !important;
+  box-shadow: 1.5px 1.5px $silver;
+}
+
+#sign-in-nav {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+#add-post {
+  margin: auto !important;
+}
+
+#terminate-button {
+  background-color: $yellow-orange;
+  color: $white;
+}
+
+#footer {
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+#header {
+  background-color: $ocean-green;
+  padding: 10px;
+  margin-bottom: -60px;
+}
+
+#logo {
+  width: 15%;
+  height: auto;
 }
 
 .profile-detail img {
