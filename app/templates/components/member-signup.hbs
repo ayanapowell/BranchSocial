@@ -1,6 +1,6 @@
 <div>
   <h3>Sign up with GitHub</h3>
-  <button {{action "githubSignUp" "github"}}>Sign up with Github</button>
+  <button class="ui button" {{action "githubSignUp" "github"}}>Sign up with Github</button>
   <hr>
   <h3>Sign up with Email</h3>
   <div class='form-group'>
@@ -11,5 +11,5 @@
     <label for='newPassword'>Password:</label>
     {{input type='password' id='newPassword' value=newPassword class='form-control' enter='emailSignUp'}}
   </div>
-  <button {{action 'emailSignUp'}}>Sign up with Email</button>
+  <button class="ui button" {{action 'emailSignUp'}}>Sign up with Email</button>
 </div>
