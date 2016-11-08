@@ -24,6 +24,12 @@ a:hover {
   text-decoration: underline;
 }
 
+.ui.inverted.menu {
+  background-color: $ocean-green;
+  font-family: 'Ubuntu', sans-serif !important;
+  height: 50px;
+}
+
 .ui.button {
   font-family: 'Ubuntu', sans-serif !important;
   background-color: $astral-blue;
@@ -36,7 +42,12 @@ a:hover {
   box-shadow: 1.5px 1.5px $silver;
 }
 
-#terminateButton {
+#sign-in-nav {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+#terminate-button {
   background-color: $yellow-orange;
   color: $white;
 }
@@ -50,5 +61,10 @@ a:hover {
 #header {
   background-color: $ocean-green;
   padding: 10px;
-  margin-bottom: 20px;
+  margin-bottom: -60px;
+}
+
+#logo {
+  width: 15%;
+  height: auto;
 }
