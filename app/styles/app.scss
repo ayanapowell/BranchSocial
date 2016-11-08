@@ -1,15 +1,27 @@
+$ocean-green: #4AA772;
+$astral-blue: #3688A4;
+$yellow-orange: #FC9B45;
+$white: #FFF;
+$black: #000;
+
 body {
   font-family: 'Ubuntu', sans-serif !important;
+  background-image: url('/assets/images/background.jpg');
+  background-repeat: repeat;
 }
 
 h3 {
   font-family: 'Ubuntu', sans-serif !important;
 }
 
-#header, #footer {
+#footer {
   text-align: center;
+  padding: 10px;
+  margin-top: 20px;
 }
 
-#logo {
-  margin-top: 10px;
+#header {
+  background-color: $ocean-green;
+  padding: 10px;
+  margin-bottom: 20px;
 }
