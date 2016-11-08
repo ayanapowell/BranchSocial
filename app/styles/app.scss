@@ -14,11 +14,14 @@ h3 {
   font-family: 'Ubuntu', sans-serif !important;
 }
 
-// button {
-//   font-family: 'Ubuntu', sans-serif !important;
-//   background-color: $astral-blue;
-//   color: $white;
-// }
+a {
+  color: $ocean-green;
+}
+
+a:hover {
+  color: $ocean-green;
+  text-decoration: underline;
+}
 
 .ui.button {
   font-family: 'Ubuntu', sans-serif !important;
