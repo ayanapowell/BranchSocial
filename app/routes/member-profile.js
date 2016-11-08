@@ -24,15 +24,6 @@ export default Ember.Route.extend({
         }
       });
       post.save();
-    },
-    editInfo(member,params){
-      console.log(member.get('firstName'));
-      Object.keys(params).forEach(function(key){
-        if(params[key] !== undefined){
-          member.set(key, params[key]);
-        }
-      });
-      member.save();
-    },
+    }
   }
 });

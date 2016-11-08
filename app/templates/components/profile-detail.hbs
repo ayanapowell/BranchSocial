@@ -2,11 +2,6 @@
   <img src={{member.avatar}}>
   {{member.screenName}}
   {{member.firstName}} {{member.lastName}}
-  {{#if showForm}}
-    {{edit-member member=member editInfo="editInfo"}}
-  {{else}}
-    <button {{action 'showForm'}} class="ui button">Edit profile</button>
-  {{/if}}
   {{add-post savePost="savePost" member=member}}
 <div class="row">
   <div class="col-md-9">
