@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   session: Ember.inject.service(),
-
+  
   model(params){
     return Ember.RSVP.hash({
       chatroom: this.store.findRecord('chatroom', params.chatroom_id),

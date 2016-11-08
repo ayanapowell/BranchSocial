@@ -1,1 +1,13 @@
-{{yield}}
+<h3>Add a member to this chatroom!</h3>
+<form id="searchName">
+  <label>Input member's screenname:</label>
+  {{input value=searchTerm}}
+  <button {{action 'searchName'}}>Search</button>
+</form>
+
+{{#if foundMember}}
+  <p>Found Member: {{foundMember.screenName}}</p>
+  <ul>
+    <li>{{foundMember.firstName}} {{foundMember.lastName}}</li>
+  </ul>
+{{/if}}
