@@ -1,10 +1,14 @@
 {{#if model.member}}
+  {{#link-to 'member-profile' model.member.id}}View your profile{{/link-to}}
+  <br><br>
   {{search-member members=model.members search="search"}}<br>
   {{edit-member editInfo="editInfo" destroyMember="destroyMember" member=model.member}}
   {{add-post savePost="savePost" member=model.member}}
   {{model.member.screenName}}
   Your feed:<br><br>
-    {{post-tile member=model.member}}
+  {{#each model.member.posts as |post|}}
+    {{post-tile post=post}}
+  {{/each}}
   <br><br>
   {{display-results seach="search"}}
 {{else}}

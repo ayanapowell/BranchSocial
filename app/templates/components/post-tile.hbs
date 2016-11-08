@@ -1,8 +1,14 @@
-{{#if member.posts}}
-  {{#each member.posts as |post|}}
-    <div class="well">
-      <div>{{post.content}}</div>
-      <div><em>{{moment-from-now post.date}}</em></div>
+<div class="well">
+  <div>{{post.content}}</div>
+  <div>
+    <em>{{moment-from-now post.date}}</em>
+  </div>
+  <button {{action 'deletePost' post}} class="btn btn-danger">Delete</button>
+  <button {{action 'showForm'}} class="btn btn-warning">Update</button>
+  {{#if showForm}}
+    <div class="form-group">
+      {{input value=content placeholder=post.content class='form-control'}}
     </div>
-  {{/each}}
-{{/if}}
+    <button {{action 'updatePost' post}} class='btn btn-primary'>Post</button>
+  {{/if}}
+</div>

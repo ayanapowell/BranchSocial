@@ -1,0 +1,27 @@
+<div class="profile-detail">
+  <img src={{member.avatar}}>
+  {{member.screenName}}
+  {{member.firstName}} {{member.lastName}}
+  {{#if showForm}}
+    {{edit-member member=member editInfo="editInfo"}}
+  {{else}}
+    <button {{action 'showForm'}} class="ui button">Edit profile</button>
+  {{/if}}
+  {{add-post savePost="savePost" member=member}}
+<div class="row">
+  <div class="col-md-9">
+    <h4>News Feed:</h4>
+    {{#each member.posts as |post|}}
+      {{post-tile post=post deletePost="deletePost" updatePost="updatePost"}}
+    {{/each}}
+  </div>
+  <div class="col-md-2 col-md-offset-1">
+    <h4>Your friends</h4>
+    {{#each member.friends as |friend|}}
+      {{#link-to 'member-profile' friend.id}} {{friend.screenName}}{{/link-to}}
+      {{#link-to 'member-profile' friend.id}}{{friend.firstName}} {{friend.lastName}}{{/link-to}}
+      {{friend.avatar}}
+    {{/each}}
+  </div>
+</div>
+</div>
