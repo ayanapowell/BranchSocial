@@ -3,10 +3,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   session: Ember.inject.service(),
   beforeModel: function() {
-    // var _this = this;
-    return this.get('session').fetch().catch(function() {
-      // _this.transitionTo('index'); // -- REDIRECT TO INDEX ROUTE TO LOG IN IF NO CURRENT SESSION
-    });
+    return this.get('session').fetch().catch(function() {});
   },
   model(){
     return Ember.RSVP.hash({

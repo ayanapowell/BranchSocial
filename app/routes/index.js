@@ -31,11 +31,12 @@ export default Ember.Route.extend({
       }
       this.get('session').open('firebase', { provider: provider, email: params.email, password: params.password}).then(function(data) {
         // RUN A CHECK TO SEE IF THIS USER IS IN THE DATABASE - IF SO GO TO MEMBERS ROUTE, ELSE STAY HERE TO FINISH REGISTRATION
-        // if (_this.get('store').hasRecordForId('member', this.get('session').get('currentUser').uid)) {
-        //   _this.transitionTo('members');
-        // } else {
-        //   console.log('member must complete 2nd registration');
-        // }
+        console.log(data.github);
+        if (_this.get('store').hasRecordForId('member', _this.get('session').get('currentUser').uid)) {
+          _this.transitionTo('members');
+        } else {
+          console.log('member must complete 2nd registration');
+        }
       });
     },
     signOut: function() {
