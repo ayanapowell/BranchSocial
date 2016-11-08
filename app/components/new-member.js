@@ -5,16 +5,17 @@ export default Ember.Component.extend({
   actions: {
     registerMember(){
       alert("1");
-
+      console.log('my email: ' + this.get('session').get('currentUser').email);
       var params = {
         firstName: this.get('newFirstName'),
         lastName: this.get('newLastName'),
-        screenName: $("#newScreenName").val(),
+        screenName: this.get('newScreenName'),
         city: this.get('newCity'),
         state: this.get('newState'),
         zipCode: this.get('newZipCode'),
         avatar: $("#newAvatar").val(),
-        id: this.get('session').get('currentUser').uid,
+        email: this.get('session').get('currentUser').email,
+        id: this.get('session').get('currentUser').uid
       };
       console.log(params);
       if(params['firstName'] && params['lastName'] && params['screenName'] && params['city'] && params['state'] && params['zipCode']){
