@@ -9,6 +9,7 @@ Router.map(function() {
   this.route('members');
   this.route('member-profile', {path: '/member-profile/:member_id'});
   this.route('group', {path: '/group/:group_id'});
+  this.route('friends');
 });
 
 export default Router;
