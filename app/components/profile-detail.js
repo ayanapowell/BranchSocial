@@ -6,10 +6,14 @@ export default Ember.Component.extend({
       this.sendAction('savePost', params);
     },
     deletePost(params) {
-      this.sendAction('deletePost', params)
+      this.sendAction('deletePost', params);
     },
     updatePost(params, post) {
       this.sendAction('updatePost', params, post);
+    },
+    saveComment(post, params) {
+      this.sendAction('saveComment', post, params);
+
     }
   }
 });
