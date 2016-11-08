@@ -3,10 +3,11 @@ $astral-blue: #3688A4;
 $yellow-orange: #FC9B45;
 $white: #FFF;
 $black: #000;
+$silver: #ccc;
 
 body {
   font-family: 'Ubuntu', sans-serif !important;
-  background-image: url('/assets/images/background.jpg');
+  background-image: url('/assets/images/subtle-texture.jpg');
   background-repeat: repeat;
 }
 
@@ -32,7 +33,7 @@ a:hover {
 .well {
   background-color: $white;
   border: none !important;
-  box-shadow: 1.5px 1.5px #ccc;
+  box-shadow: 1.5px 1.5px $silver;
 }
 
 #terminateButton {
