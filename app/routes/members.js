@@ -2,14 +2,13 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   session: Ember.inject.service(),
-
   model(){
     return Ember.RSVP.hash({
       member: this.store.findRecord('member', this.get('session').get('currentUser').uid),
+      members: this.store.findAll('member'),
     })
   },
   actions: {
-
     editInfo(member, params){
       console.log(member.get('firstName'));
       Object.keys(params).forEach(function(key){
@@ -34,6 +33,15 @@ export default Ember.Route.extend({
         return member.save();
       });
       this.transitionTo('members');
+    },
+    search(search) {
+      console.log(search);
+      console.log(model.members);
+      // this.members.forEach(function(member) {
+      //   if(member.firstName === search) {
+      //     alert("We found a match!");
+      //   }
+      // });
     }
   }
 });
