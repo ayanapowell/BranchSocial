@@ -13,7 +13,6 @@ export default Ember.Component.extend({
         orderBy: 'screenName',
         equalTo: this.get('searchedTerm')
       }).then(function(response){
-        console.log(response.get('firstObject').get('firstName'));
         _this.set('foundMember', response.get('firstObject'));
       });
     }

@@ -1,6 +1,7 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
+  owner: DS.attr(),
   name: DS.attr(),
   description: DS.attr(),
   members: DS.hasMany('member', { async: true }),

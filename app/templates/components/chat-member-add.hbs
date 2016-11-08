@@ -1,4 +1,4 @@
-<h3>Add a member to this chatroom!</h3>
+<h3>Add a member to this Group!</h3>
 <form id="searchName">
   <label>Input member's screenname:</label>
   {{input value=searchTerm}}
@@ -6,8 +6,8 @@
 </form>
 
 {{#if foundMember}}
-  <p>Found Member: {{foundMember.screenName}}</p>
+  <p>Found Member: {{foundMember.screenName}} <button {{action 'addToGroup' foundMember}}>Add to group!</button></p>
   <ul>
-    <li>{{foundMember.firstName}} {{foundMember.lastName}}</li>
+    <li>{{foundMember.firstName}}({{foundMember.screenName}})</li>
   </ul>
 {{/if}}
