@@ -34,6 +34,8 @@ a:hover {
   font-family: 'Ubuntu', sans-serif !important;
   background-color: $astral-blue;
   color: $white;
+  margin-top: 7px;
+  margin-bottom: 7px;
 }
 
 .well {
@@ -45,6 +47,10 @@ a:hover {
 #sign-in-nav {
   margin-left: auto;
   margin-right: 0;
+}
+
+#add-post {
+  margin: auto !important;
 }
 
 #terminate-button {
