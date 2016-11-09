@@ -1,4 +1,10 @@
 <div class="well">
+  {{#if isOwner}}
+  <div class="edit-options">
+    <i id="update-post-icon" {{action 'showForm'}} class="write icon"></i>
+    <i id="delete-post-icon" {{action 'deletePost' post}} class="remove icon"></i>
+  </div>
+  {{/if}}
   <div>{{moment-from-now post.date}}</div>
   <p>{{post.member.firstName}}</p>
   <p>{{post.content}}</p>
@@ -6,10 +12,6 @@
     {{input value=commentContent placeholder="Leave a comment" class="form-control"}}
     <button {{action 'saveComment' post}} class="ui button">comment</button>
   </form>
-  {{#if isOwner}}
-    <button {{action 'deletePost' post}} class="btn btn-danger">Delete</button>
-    <button {{action 'showForm'}} class="btn btn-warning">Update</button>
-  {{/if}}
   <br>
   {{#if showForm}}
     <div class="form-group">
