@@ -3,7 +3,6 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   session: Ember.inject.service(),
   store: Ember.inject.service(),
-  showForms: false,
   error: null,
   actions: {
     githubSignIn(provider) {
@@ -40,9 +39,6 @@ export default Ember.Component.extend({
         console.log(err.message);
         _this.set('error', err.message);
       });;
-    },
-    clickShowForms() {
-      this.set('showForms', true);
     }
   }
 });

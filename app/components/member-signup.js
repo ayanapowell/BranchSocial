@@ -3,7 +3,6 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   firebaseApp: Ember.inject.service(),
   error: null,
-  showForms: false,
   actions: {
     githubSignUp(provider) {
       this.sendAction('signIn', provider);
@@ -27,9 +26,6 @@ export default Ember.Component.extend({
       } else {
         this.set('error', 'Username must be unique, and password must be at least 6 characters.');
       }
-    },
-    clickShowForms() {
-      this.set('showForms', true);
     }
   }
 });

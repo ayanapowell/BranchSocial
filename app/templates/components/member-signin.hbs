@@ -1,22 +1,30 @@
 <div>
   <h2>Returning Member?</h2>
   <p>Welcome back, we've missed you.</p>
-  <button class="ui button" {{action "githubSignIn" "github"}}>Sign In with Github</button>
+  <button class="ui button" {{action "githubSignIn" "github"}}>Sign In with GitHub</button>
   <br><br>
-  {{#if showForms}}
-    <div class='form-group'>
-      <label>Email:</label>
-      {{input id="email" value=email class='form-control' enter="emailSignIn"}}
+  <p id="sign-in-link" data-toggle="modal" data-target=".modal-sm-signin">Still don't have a GitHub account?</p>
+</div>
+
+<!-- Modal -->
+<div class="modal fade modal-sm-signin" tabindex="-1" role="dialog" aria-labelledby="signInModal" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div id="sign-in-form" class="modal-content">
+      <h3>Sign In</h3>
+      <hr>
+      <div class='form-group'>
+        <label>Email:</label>
+        {{input id="email" value=email class='form-control' enter="emailSignIn"}}
+      </div>
+      <div class='form-group'>
+        <label>Password:</label>
+        {{input id="password" value=password type='password' class='form-control' enter="emailSignIn"}}
+      </div>
+      <button class="ui button" {{action "emailSignIn" }} data-dismiss="modal">Sign In</button>
+      {{#if error}}
+        <h4>Error: {{error}}</h4>
+      {{/if}}
+
     </div>
-    <div class='form-group'>
-      <label>Password:</label>
-      {{input id="password" value=password type='password' class='form-control' enter="emailSignIn"}}
-    </div>
-    <button class="ui button" {{action "emailSignIn"}}>Log In!</button>
-    {{#if error}}
-      <h4>Error: {{error}}</h4>
-    {{/if}}
-  {{else}}
-    <p {{action "clickShowForms"}}>Use email address...</p>
-  {{/if}}
+  </div>
 </div>
