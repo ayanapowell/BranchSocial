@@ -15,6 +15,10 @@ h3 {
   font-family: 'Ubuntu', sans-serif !important;
 }
 
+h6 {
+  cursor: pointer;
+}
+
 a {
   color: $ocean-green;
 }
@@ -52,6 +56,10 @@ a:hover {
 }
 
 .sign.out.large.icon {
+  cursor: pointer;
+}
+
+.item {
   cursor: pointer;
 }
 
@@ -99,10 +107,4 @@ a:hover {
 #member-avatar {
   border-radius: 50%;
   width: 60%;
-}
-
-// DELETE THIS ON MERGE!!!!!
-.comment-tile img {
-  width: 30px;
-  height: 30px;
 }

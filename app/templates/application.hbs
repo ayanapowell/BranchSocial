@@ -2,24 +2,47 @@
   {{#link-to 'members'}}<img id="logo" src="/assets/images/logo-blue.png">{{/link-to}}
 </header>
 
-<div class="ui inverted menu">
-  <div id="sign-in-nav" class="item">
-    Sign In
+<!-- if logged in -->
+{{#if session.isAuthenticated}}
+  <div class="ui inverted menu">
+    <div id="sign-in-nav" class="item">
+      Search
+    </div>
+    <div class="item">
+      Settings
+    </div>
+    <div {{action "signOut"}} class="item">
+      Sign Out &nbsp;	<i class="sign out large icon"></i>
+    </div>
   </div>
-  <div class="item">
-    Search
+
+<!-- if not logged in -->
+{{else}}
+  <div class="ui inverted menu">
+    <div id="sign-in-nav" class="item">
+      About Us
+    </div>
+    <div class="item">
+      Privacy Policy
+    </div>
   </div>
-  <div class="item">
-    <i {{action "signOut"}} class="sign out large icon"></i>
-  </div>
-</div>
+{{/if}}
+
 
 <img id="triangle" src="/assets/images/triangle.png">
 
 <div class="container">
   {{outlet}}
-</div>
 
-<footer id="footer">
-  <h6>&copy; 2016 pdxBranch</h6>
-</footer>
+  {{#if session.isAuthenticated}}
+    <footer id="footer">
+      <h6>About Us | Privacy Policy</h6>
+      <h6>&copy; 2016 pdxBranch</h6>
+    </footer>
+  {{else}}
+    <footer id="footer">
+      <h6>&copy; 2016 pdxBranch</h6>
+    </footer>
+  {{/if}}
+
+</div>
