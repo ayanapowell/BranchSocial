@@ -31,13 +31,13 @@ export default Ember.Component.extend({
       }
     },
     saveComment(post) {
-      console.log(post);
       var date = moment().format('LLLL');
       var params = {
         content: this.get('commentContent'),
         date: date,
         member: this.get('member')
       };
+      $('#dashboard-comment').trigger('reset');
       this.sendAction('saveComment', post, params);
     }
   }

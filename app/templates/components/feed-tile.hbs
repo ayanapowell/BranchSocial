@@ -2,8 +2,10 @@
   <div>{{moment-from-now post.date}}</div>
   <p>{{post.member.firstName}}</p>
   <p>{{post.content}}</p>
-  {{input value=commentContent placeholder="Leave a comment" class="form-control"}}
-  <button {{action 'saveComment' post}} class="ui button">comment</button>
+  <form id="dashboard-comment">
+    {{input value=commentContent placeholder="Leave a comment" class="form-control"}}
+    <button {{action 'saveComment' post}} class="ui button">comment</button>
+  </form>
   {{#if isOwner}}
     <button {{action 'deletePost' post}} class="btn btn-danger">Delete</button>
     <button {{action 'showForm'}} class="btn btn-warning">Update</button>
