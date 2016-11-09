@@ -18,8 +18,7 @@ export default Ember.Component.extend({
 
       };
       if(params['firstName'] && params['lastName'] && params['screenName'] && params['city'] && params['state'] && params['zipCode']){
-        alert("2");
-            $("input").val("");
+      $("input").val("");
         this.sendAction('registerMember', params);
       }
     }
