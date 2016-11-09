@@ -14,6 +14,7 @@ export default DS.Model.extend({
   posts: DS.hasMany('post', {async:true}),
   requests: DS.hasMany('request', {async:true}),
   comments: DS.hasMany('comment', {async:true}),
+  groupPosts: DS.hasMany('group-post', {async:true})
   // photos: DS.attr()
 
 });

@@ -32,6 +32,20 @@ export default Ember.Route.extend({
       member.save().then(function() {
         return group.save();
       });
+    },
+    savePost(params) {
+      var newPost = this.store.createRecord('group-post', params);
+      var member = params['member'];
+      var group = params['group'];
+      member.get('groupPosts').addObject(newPost);
+      group.get('groupPosts').addObject(newPost);
+      newPost.save().then(function() {
+        member.save();
+        return group.save();
+      });
+    },
+    deletePost(params) {
+      params.destroyRecord();
     }
   }
 });

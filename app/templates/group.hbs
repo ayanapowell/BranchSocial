@@ -1,8 +1,16 @@
 <h2>{{model.group.name}}</h2>
 <h4>{{model.group.description}}</h4>
-
-<div class='well'>
-  {{chat-display messages=model.group.messages}}
-  {{message-new member=model.member group=model.group sendMessage="sendMessage"}}
+<div class="row">
+  <div class="col-sm-9">
+    <div class='well'>
+      {{chat-display messages=model.group.messages}}
+      {{message-new member=model.member group=model.group sendMessage="sendMessage"}}
+    </div>
+    {{chat-member-add members=model.group.members group=model.group addMemberToGroup="addMemberToGroup" removeMemberFromGroup="removeMemberFromGroup"}}
+  </div>
+  <div class="col-sm-3">
+    <h4>Add inspiration and instant references!</h4>
+    {{group-post-list posts=model.group.groupPosts deletePost="deletePost"}}
+    {{add-group-post group=model.group member=model.member savePost="savePost"}}
+  </div>
 </div>
-{{chat-member-add members=model.group.members group=model.group addMemberToGroup="addMemberToGroup" removeMemberFromGroup="removeMemberFromGroup"}}
