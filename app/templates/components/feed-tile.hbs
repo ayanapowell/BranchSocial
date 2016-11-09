@@ -5,13 +5,19 @@
     <i id="delete-post-icon" {{action 'deletePost' post}} class="remove icon"></i>
   </div>
   {{/if}}
-  <div>{{moment-from-now post.date}}</div>
-  <p>{{post.member.firstName}}</p>
-  <p>{{post.content}}</p>
-  <form id="dashboard-comment">
-    {{input value=commentContent placeholder="Leave a comment" class="form-control"}}
-    <button {{action 'saveComment' post}} class="ui button">comment</button>
-  </form>
+  <div class="row">
+    <div class="col-sm-2 text-center">
+      {{#link-to 'member-profile' post.member.id}}<img src={{post.member.avatar}} onerror="this.src='http://www.pngall.com/wp-content/uploads/2016/05/Branch-Free-Download-PNG.png'"  id="post-image">{{/link-to}}<br>
+      {{#link-to 'member-profile' post.member.id}}{{post.member.firstName}}{{/link-to}}
+    </div>
+
+    <div class="col-sm-10">
+      <h4 id="post-content">{{post.content}}</h4>
+      <em><small>{{moment-from-now post.date}}</small></em>
+    </div>
+  </div>
+  <hr>
+
   <br>
   {{#if showForm}}
     <div class="form-group">
@@ -22,4 +28,8 @@
   {{#each post.comments as |comment|}}
     {{comment-tile comment=comment}}
   {{/each}}
+  <form id="dashboard-comment">
+    {{input value=commentContent placeholder="Leave a comment" class="form-control"}}
+    <button {{action 'saveComment' post}} class="ui button">Comment</button>
+  </form>
 </div>

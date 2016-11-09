@@ -190,6 +190,13 @@ a:hover {
 
 }
 
+#post-image {
+  height: 70px;
+  width: auto;
+  border-radius: 50%;
+
+}
+
 #delete-post-icon {
   color: $texas-rose;
   cursor: pointer;
@@ -198,4 +205,8 @@ a:hover {
  #update-post-icon {
    color: $ocean-green;
    cursor: pointer;
+ }
+
+ #post-content {
+   margin-bottom: 0 !important;
  }
