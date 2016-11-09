@@ -15,6 +15,10 @@ h3 {
   font-family: 'Ubuntu', sans-serif !important;
 }
 
+h6 {
+  cursor: pointer;
+}
+
 a {
   color: $ocean-green;
 }
@@ -55,6 +59,10 @@ a:hover {
   cursor: pointer;
 }
 
+.item {
+  cursor: pointer;
+}
+
 #sign-in-nav {
   margin-left: auto;
   margin-right: 0;
@@ -64,10 +72,14 @@ a:hover {
   margin: auto !important;
 }
 
-#terminate-button {
+#delete-account {
   color: $texas-rose;
-  background-color: $white;
-  border: 1px solid $texas-rose;
+}
+
+#update-button {
+  color: $astral-blue;
+  background-color: transparent;
+  border: 1px solid $astral-blue;
 }
 
 #footer {
@@ -99,10 +111,15 @@ a:hover {
 #member-avatar {
   border-radius: 50%;
   width: 60%;
+  display: block;
+  margin: 0 auto;
 }
 
-// DELETE THIS ON MERGE!!!!!
-.comment-tile img {
-  width: 30px;
-  height: 30px;
+#account-options {
+  text-align: center;
+  margin-top: 10px;
+}
+
+#update-form {
+  margin-top: 10px;
 }

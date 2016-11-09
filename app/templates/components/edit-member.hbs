@@ -1,23 +1,26 @@
-
-<div class="well">
-  <h3>Edit Information: </h3>
-  <label for="">First Name:</label>
-  {{input value=editFirstName id="editFirstName" class="form-control" placeholder=member.firstName}}
-  <label for="">Last Name:</label>
-  {{input value=editLastName id="editLastName" class="form-control" placeholder=member.lastName}}
-  <label for="">Screen Name:</label>
-  {{input value=editScreenName id="editScreenName" class="form-control" placeholder=member.screenName}}
-  <label for="">City:</label>
-  {{input value=editCity id="editCity" class="form-control" placeholder=member.city}}
-  <label for="">State:</label>
-  {{input value=editState id="editState" class="form-control" placeholder=member.state}}
-  <label for="">Zip Code:</label>
-  {{input value=editZipCode id="editZipCode" class="form-control" placeholder=member.zipCode}}
-  <label for="">Avatar:</label>
-  {{input value=editAvatar id="editAvatar" class="form-control" placeholder=member.avatar}}
-  <button class="ui button" {{action "editInfo" member}}>Sign Up</button>
+<div id="account-options">
+  <button id="update-button" class="ui button" {{action "updateMember"}}>Update Profile</button>
+  <br>
+  <a {{action "destroyMember" member}} id="delete-account"><small>Delete Account</small></a>
 </div>
 
-<div class="well">
-  <button {{action "destroyMember" member}} id="terminate-button" class="ui button" >Terminate my membership</button>
-</div>
+{{#if updateButtonClicked}}
+  <div id="update-form" class="well">
+    <h3>Edit Information: </h3>
+    <label for="">First Name:</label>
+    {{input value=editFirstName id="editFirstName" class="form-control" placeholder=member.firstName}}
+    <label for="">Last Name:</label>
+    {{input value=editLastName id="editLastName" class="form-control" placeholder=member.lastName}}
+    <label for="">Screen Name:</label>
+    {{input value=editScreenName id="editScreenName" class="form-control" placeholder=member.screenName}}
+    <label for="">City:</label>
+    {{input value=editCity id="editCity" class="form-control" placeholder=member.city}}
+    <label for="">State:</label>
+    {{input value=editState id="editState" class="form-control" placeholder=member.state}}
+    <label for="">Zip Code:</label>
+    {{input value=editZipCode id="editZipCode" class="form-control" placeholder=member.zipCode}}
+    <label for="">Avatar:</label>
+    {{input value=editAvatar id="editAvatar" class="form-control" placeholder=member.avatar}}
+    <button class="ui button" {{action "editInfo" member}}>Save Changes</button>
+  </div>
+{{/if}}
