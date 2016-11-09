@@ -5,7 +5,7 @@
 
 ### Development Team:
 * Mark Lawson - Project Manager, Back-End Developer
-* April Peng - Back-End Developer
+* April Peng - Project Manager, Back-End Developer
 * Chris Martinez - Back-End Developer
 * Sheena Nickerson - Back-End Developer
 * Ayana Powell - Back-End Developer
