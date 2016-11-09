@@ -1,17 +1,16 @@
 <div class='well'>
-  <h4>Group Members</h4>
+  <h4>Current Members:</h4>
   <ul>
     {{#each members as |member|}}
-      <li>{{member.screenName}} <button {{action 'removeFromGroup' member group}}>Remove</button></li>
+      <li>{{member.screenName}} <i {{action 'removeFromGroup' member group}} class="trash icon"></i></li>
     {{/each}}
   </ul>
-
   <hr>
   <h3>Add a member to this Group!</h3>
   <form id="searchName">
     <label>Input member's screenname:</label>
-    {{input value=searchTerm}}
-    <button class="ui button" {{action 'searchName'}}>Search</button>
+    {{input value=searchTerm class="form-control" placeholder="screenname"}}
+    <button class="ui button tiny" {{action 'searchName'}}>Search</button>
   </form>
 
   {{#if foundMember}}
