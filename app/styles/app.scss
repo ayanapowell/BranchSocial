@@ -51,6 +51,10 @@ a:hover {
   object-fit: cover;
 }
 
+.sign.out.large.icon {
+  cursor: pointer;
+}
+
 #sign-in-nav {
   margin-left: auto;
   margin-right: 0;
@@ -90,6 +94,11 @@ a:hover {
 #chatDisplay {
   height: 200px;
   overflow: scroll;
+}
+
+#member-avatar {
+  border-radius: 50%;
+  width: 60%;
 }
 
 // DELETE THIS ON MERGE!!!!!
