@@ -43,3 +43,6 @@ export default Ember.Route.extend({
     }
   }
 });
+
+//
+// https://branch-social.firebaseio.com/branch-social.appspot.com/images/chris.png

@@ -13,7 +13,7 @@ export default DS.Model.extend({
   friends: DS.hasMany('member', {async:true}),
   posts: DS.hasMany('post', {async:true}),
   requests: DS.hasMany('request', {async:true}),
-  comments: DS.hasMany('comment', {async:true})
+  comments: DS.hasMany('comment', {async:true}),
   photos: DS.attr()
 
 });
