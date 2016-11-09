@@ -5,9 +5,7 @@
 {{add-post savePost="savePost" member=model.member}}
 {{model.member.screenName}}
 Your feed:<br><br>
-{{#each model.member.posts as |post|}}
-  {{post-tile post=post}}
-{{/each}}
+{{posts-tiles posts=model.member.posts member=model.member}}
 <br><br>
 {{display-results seach="search"}}
 

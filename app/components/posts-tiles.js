@@ -1,0 +1,61 @@
+import Ember from 'ember';
+
+export default Ember.Component.extend({
+  session: Ember.inject.service(),
+  showForm: false,
+  isOwner: Ember.computed("this.get('session')", "this.get('post')",  function() {
+    if(this.get('session').get('currentUser').uid === this.get('post').get('member').get('id')) {
+      return true;
+    } else {
+      return false;
+    }
+  }),
+  // still a work in progress. Everything works until it hits the return statement. gaddamn it!!
+  postList: Ember.computed("this.get('member')", function() {
+    var postList = [];
+    var friendList = [];
+    var posts = [];
+    var friends = this.get('member').get('friends');
+    friends.forEach(function(friend) {
+      friendList.push(friend);
+    });
+    friendList.forEach(function(friend) {
+      postList.push(friend.get('posts'));
+    });
+    postList.forEach(function(post) {
+      posts.push(post);
+    });
+    console.log(posts[0]);
+    return;
+  }),
+  actions: {
+    deletePost(params) {
+      this.sendAction('deletePost', params);
+    },
+    updatePost(post) {
+      var date = moment().format('LLLL');
+      var params = {
+        content: this.get('content'),
+        date: date
+      }
+      this.sendAction('updatePost', params, post);
+    },
+    showForm() {
+      if (this.showForm === false) {
+        this.set('showForm', true);
+      } else {
+        this.set('showForm', false);
+      }
+    },
+    saveComment(post) {
+      var date = moment().format('LLLL');
+      var params = {
+        content: this.get('commentContent'),
+        date: date,
+        member: this.get('member')
+      }
+
+      this.sendAction('saveComment', post, params);
+    }
+  }
+});
