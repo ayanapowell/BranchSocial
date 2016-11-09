@@ -25,6 +25,7 @@ export default Ember.Route.extend({
     },
     destroyMember(member){
       member.destroyRecord();
+      this.get('session').close();
       this.transitionTo('index');
     },
     savePost(params) {
