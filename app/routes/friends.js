@@ -23,12 +23,13 @@ export default Ember.Route.extend({
         newRequest.save();
       });
     },
-    addFriend(member, requester_id){
+    addFriend(member, requester_id, request){
       this.store.findRecord('member',requester_id).then(function(requester){
         requester.get('friends').addObject(member).then(function(){
           member.get('friends').addObject(requester).then(function(){
             requester.save();
-              member.save();
+            member.save();
+            request.destroyRecord();
           });
         });
       });
