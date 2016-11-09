@@ -1,11 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  updateButtonClicked: false,
   actions: {
-    updateMember(){
-      this.set('updateButtonClicked', true);
-    },
     editInfo(member){
       var params = {
         firstName: this.get('editFirstName'),
@@ -16,8 +12,7 @@ export default Ember.Component.extend({
         zipCode: this.get('editZipCode'),
         avatar: this.get('editAvatar'),
       };
-      this.sendAction('editInfo',member, params);
-      this.set('updateButtonClicked', false);
+      this.sendAction('editInfo', member, params);
     },
     destroyMember(member){
       this.sendAction('destroyMember', member);

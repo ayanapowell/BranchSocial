@@ -8,18 +8,17 @@
       {{model.member.screenName}}!</h3>
     </div>
     {{edit-member editInfo="editInfo" destroyMember="destroyMember" member=model.member}}
+    {{group-list member=model.member}}
+    {{new-group member=model.member addNewGroup="addNewGroup"}}
   </div>
   <div class="col-sm-8">
-        <!-- {{search-member members=model.members search="search"}}<br> -->
+        <!-- {{search-member members=model.members search="search"}}<br>
+        {{display-results seach="search"}} -->
         {{add-post savePost="savePost" member=model.member}}
         {{model.member.screenName}}
         Your feed:<br><br>
         {{#each model.member.posts as |post|}}
           {{post-tile post=post}}
         {{/each}}
-        <br><br>
-        {{display-results seach="search"}}
-        {{group-list member=model.member}}
-        {{new-group member=model.member addNewGroup="addNewGroup"}}
   </div>
 </div>

@@ -15,7 +15,6 @@ export default Ember.Route.extend({
   },
   actions: {
     editInfo(member, params){
-      console.log(member.get('firstName'));
       Object.keys(params).forEach(function(key){
         if(params[key] !== undefined){
           member.set(key, params[key]);
@@ -24,7 +23,6 @@ export default Ember.Route.extend({
       member.save();
       this.transitionTo('members');
     },
-
     destroyMember(member){
       member.destroyRecord();
       this.transitionTo('index');
