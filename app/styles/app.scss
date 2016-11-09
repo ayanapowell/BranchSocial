@@ -72,10 +72,14 @@ a:hover {
   margin: auto !important;
 }
 
-#terminate-button {
+#delete-account {
   color: $texas-rose;
-  background-color: $white;
-  border: 1px solid $texas-rose;
+}
+
+#update-button {
+  color: $astral-blue;
+  background-color: transparent;
+  border: 1px solid $astral-blue;
 }
 
 #footer {
@@ -107,4 +111,14 @@ a:hover {
 #member-avatar {
   border-radius: 50%;
   width: 60%;
+  display: block;
+  margin: 0 auto;
+}
+
+#account-options {
+  text-align: center;
+}
+
+#update-form {
+  margin-top: 10px;
 }
