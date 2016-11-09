@@ -21,7 +21,7 @@ pdxBranch is a networking site for developers in the Portland, Oregon area. User
 
 ## Installation
 
-* `git clone https://github.com/mlawson3691/branch-social.git` this repository
+* `git clone https://github.com/mlawson3691/branch-social.git`
 * `cd branch-social`
 * `npm install`
 * `bower install`
