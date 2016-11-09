@@ -15,6 +15,7 @@
         <!-- {{search-member members=model.members search="search"}}<br>
         {{display-results seach="search"}} -->
         {{add-post savePost="savePost" member=model.member}}
+        <hr>
         {{model.member.screenName}}
         Your feed:<br><br>
         {{#each model.member.posts as |post|}}
