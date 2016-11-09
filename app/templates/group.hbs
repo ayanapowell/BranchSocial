@@ -1,16 +1,18 @@
-<h2>{{model.group.name}}</h2>
-<h4>{{model.group.description}}</h4>
+<br><h2>{{model.group.name}}<span class="group-description">{{model.group.description}}</span></h2><br>
 <div class="row">
   <div class="col-sm-9">
-    <div class='well'>
-      {{chat-display messages=model.group.messages}}
-      {{message-new member=model.member group=model.group sendMessage="sendMessage"}}
+      <div class='well chatroom-well'>
+        <div id="chat-top-bar">
+          <p>Chatroom</p>
+        </div>
+        {{chat-display messages=model.group.messages}}
+        {{message-new member=model.member group=model.group sendMessage="sendMessage"}}
+      </div>
+      {{chat-member-add members=model.group.members group=model.group addMemberToGroup="addMemberToGroup" removeMemberFromGroup="removeMemberFromGroup"}}
     </div>
-    {{chat-member-add members=model.group.members group=model.group addMemberToGroup="addMemberToGroup" removeMemberFromGroup="removeMemberFromGroup"}}
-  </div>
   <div class="col-sm-3">
     <h4>Add inspiration and instant references!</h4>
-    {{group-post-list posts=model.group.groupPosts deletePost="deletePost"}}
     {{add-group-post group=model.group member=model.member savePost="savePost"}}
+    {{group-post-list posts=model.group.groupPosts deletePost="deletePost"}}
   </div>
 </div>

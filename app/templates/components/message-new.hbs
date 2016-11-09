@@ -1,6 +1,6 @@
 <div class="container">
-  <form id="messageNew">
-    <button class= "ui button" {{action 'sendMessage'}}>Send</button>
-    {{input value=messageText rows=3 enter="sendMessage"}}
+  <form id="messageNew" class="form-inline">
+    {{input value=messageText rows=3 enter="sendMessage" class="form-control" placeholder="chat!" id="chat-input"}}
+    <button class= "ui button tiny" {{action 'sendMessage'}} id="chatButton">Send</button>
   </form>
 </div>

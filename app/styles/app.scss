@@ -153,11 +153,6 @@ a:hover {
   margin-top: -23px !important;
 }
 
-#chatDisplay {
-  height: 200px;
-  overflow: scroll;
-}
-
 #member-avatar {
   border-radius: 50%;
   width: 60%;
@@ -233,3 +228,56 @@ a:hover {
  #post-content {
    margin-bottom: 0 !important;
  }
+ 
+/* ------ chatroom ----- */
+
+#chatDisplay {
+  height: 200px;
+  overflow: scroll;
+}
+
+#chatDisplay em {
+  color: $astral-blue;
+}
+
+#chatDisplay strong {
+  font-weight: bolder;
+}
+
+#chat-input {
+  width: 60%;
+}
+
+#searchName {
+  width: 40%;
+}
+
+span.group-description {
+  font-size: 15px;
+  padding-left: 10px;
+  font-style: italic;
+  font-weight: lighter;
+}
+
+.trash {
+  color: $texas-rose;
+  padding-left: 6px;
+}
+
+.trash:hover {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+#chat-top-bar {
+  height: 40px;
+  background-color: $astral-blue;
+  margin: -19px -19px 19px -19px;
+  color: #f2f2f2;
+}
+
+#chat-top-bar p {
+  padding-top: 12px;
+  padding-left: 12px;
+  letter-spacing: 0.5px;
+}
