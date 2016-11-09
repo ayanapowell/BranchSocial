@@ -16,6 +16,8 @@
     <hr>
     {{model.member.screenName}}
     Your feed:<br><br>
-    {{posts-tiles member=model.member deletePosts="deletePost" updatePost="updatePost" saveComment="saveComment"}}
+    {{posts-tiles member=model.member deletePost="deletePost" updatePost="updatePost" saveComment="saveComment"}}
   </div>
 </div>
+
+{{#link-to 'friends'}}<button>Friends</button>{{/link-to}}

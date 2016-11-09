@@ -22,7 +22,7 @@ export default Ember.Route.extend({
         }
       });
       member.save();
-      this.transitionTo('members');
+      this.refresh();
     },
     destroyMember(member){
       member.destroyRecord();
@@ -35,12 +35,13 @@ export default Ember.Route.extend({
       var member = params['member'];
       member.get('posts').addObject(newPost);
       newPost.save().then(function() {
-        return member.save();
+        member.save();
+        // this.refresh(); not working
       });
-      this.transitionTo('members');
     },
     deletePost(params) {
       params.destroyRecord();
+      // this.refresh(); not working
     },
     updatePost(params, post) {
       Object.keys(params).forEach(function(key) {
@@ -49,6 +50,7 @@ export default Ember.Route.extend({
         }
       });
       post.save();
+      this.refresh();
     },
     search(search) {
       console.log(search);
@@ -78,6 +80,7 @@ export default Ember.Route.extend({
         member.save();
         post.save();
       });
+      this.refresh();
     }
   }
 });

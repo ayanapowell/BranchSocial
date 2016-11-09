@@ -23,12 +23,13 @@ export default Ember.Route.extend({
         newRequest.save();
       });
     },
-    addFriend(member, requester_id){
+    addFriend(member, requester_id, request){
       this.store.findRecord('member',requester_id).then(function(requester){
         requester.get('friends').addObject(member).then(function(){
           member.get('friends').addObject(requester).then(function(){
             requester.save();
-              member.save();
+            member.save();
+            request.destroyRecord();
           });
         });
       });
@@ -42,17 +43,17 @@ export default Ember.Route.extend({
         });
       });
     },
-    uploadImage(){
-      let image =  document.getElementById('imageToUpload');
-      let name = "chris";
-      let file =image.files[0];
-      console.log(file);
-      const storageRef = this.get('firebaseApp').storage().ref('images/'+file.name);
-      storageRef.put(file).then(function(snapshot){
-        let url = snapshot.metadata.downloadURLs[0];
-        console.log(snapshot.metadata);
-      });
-      console.log(storageRef);
-    }
+    // uploadImage(){
+    //   let image =  document.getElementById('imageToUpload');
+    //   let name = "chris";
+    //   let file =image.files[0];
+    //   console.log(file);
+    //   const storageRef = this.get('firebaseApp').storage().ref('images/'+file.name);
+    //   storageRef.put(file).then(function(snapshot){
+    //     let url = snapshot.metadata.downloadURLs[0];
+    //     console.log(snapshot.metadata);
+    //   });
+    //   console.log(storageRef);
+    // }
   } //end action
 });
