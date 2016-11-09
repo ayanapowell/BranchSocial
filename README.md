@@ -1,7 +1,6 @@
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/mlawson3691/branch-social/master/public/favicon.png">
-  # pdxBranch
+  <img src="https://raw.githubusercontent.com/mlawson3691/branch-social/master/public/assets/images/logo-black.png">
 </p>
 
 ### Development Team:
