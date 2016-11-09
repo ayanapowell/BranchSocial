@@ -1,3 +1,5 @@
-{{#each messages as |message|}}
-<p><strong>{{message.memberName}}:</strong> <em>({{moment-from-now message.date}})</em> {{message.messageText}} </p>
-{{/each}}
+<div id='chatDisplay'>
+  {{#each messages as |message|}}
+  <p><strong>{{message.memberName}}</strong> <em>({{moment-from-now message.date}}):</em> {{message.messageText}} </p>
+  {{/each}}
+</div>

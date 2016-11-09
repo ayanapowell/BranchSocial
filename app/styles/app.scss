@@ -87,9 +87,13 @@ a:hover {
   margin-top: -23px !important;
 }
 
+#chatDisplay {
+  height: 200px;
+  overflow: scroll;
+}
+
 // DELETE THIS ON MERGE!!!!!
 .comment-tile img {
   width: 30px;
   height: 30px;
-  object-fit: cover;
 }

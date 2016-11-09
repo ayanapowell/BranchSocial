@@ -1,0 +1,8 @@
+<div class='well'>
+  <h3>My Groups</h3>
+  <ul>
+    {{#each member.groups as |group|}}
+      <li>{{#link-to 'group' group.id}}{{group.name}}{{/link-to}}</li>
+    {{/each}}
+  </ul>
+</div>
