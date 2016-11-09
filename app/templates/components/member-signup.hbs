@@ -1,22 +1,22 @@
 <div>
+  <h2>New to pdxBranch?</h2>
+  <p>Make a profile and start collaborating!</p>
+  <button class="ui button" {{action "githubSignUp" "github"}}>Sign Up with Github</button>
+  <br><br>
   {{#if showForms}}
-    <h3>Sign up with GitHub</h3>
-    <button class="ui button" {{action "githubSignUp" "github"}}>Sign up with Github</button>
-    <hr>
-    <h3>Sign up with Email</h3>
     <div class='form-group'>
       <label for='newEmail'>Email:</label>
-      {{input id='newEmail' value=newEmail class='form-control' enter='emailSignUp'}}
+      {{input id='newEmail' value=newEmail class='form-control' enter='emailSignUp' placeholder="you@email.com"}}
     </div>
     <div class='form-group'>
       <label for='newPassword'>Password:</label>
-      {{input type='password' id='newPassword' value=newPassword class='form-control' enter='emailSignUp'}}
+      {{input type='password' id='newPassword' value=newPassword class='form-control' enter='emailSignUp' placeholder="password"}}
     </div>
-    <button class="ui button" {{action 'emailSignUp' 'signUp'}}>Sign up with Email</button>
+    <button class="ui button" {{action 'emailSignUp' 'signUp'}}>Sign Up</button>
     {{#if error}}
       <h4>Error: {{error}}</h4>
     {{/if}}
   {{else}}
-    <button class="ui button" {{action "clickShowForms"}}>Sign up now!</button>
+    <p {{action "clickShowForms"}}>Don't have a GitHub account?</p>
   {{/if}}
 </div>

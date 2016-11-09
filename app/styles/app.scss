@@ -68,6 +68,17 @@ a:hover {
   padding: 7px !important;
 }
 
+.jumbotron {
+  background-color: $white;
+  margin-top: 10px;
+}
+
+.footer {
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+
 #update-form {
   display: block;
   margin: auto 15%;
@@ -91,12 +102,6 @@ a:hover {
   color: $astral-blue;
   background-color: transparent;
   border: 1px solid $astral-blue;
-}
-
-#footer {
-  text-align: center;
-  padding: 10px;
-  margin-top: 20px;
 }
 
 #header {
