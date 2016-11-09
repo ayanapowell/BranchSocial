@@ -1,7 +1,13 @@
-<form id='add-post' class='well'>
-  Add a post!<br>
-  <div class="form-group">
-    {{input value=content placeholder='What are you thinking?' class='form-control'}}
+<div class="row well">
+  <div id="thinking-column" class="col-sm-2">
+    <img id="thinking" src="/assets/images/thinking.png">
   </div>
-  <button {{action 'savePost'}} id="add-post" class='ui button'>Post</button>
-</form>
+  <div class="col-sm-8">
+    <form id='add-post'>
+      <div class="form-group">
+        {{textarea rows=3 value=content placeholder='What are you thinking?' class='form-control'}}
+      </div>
+      <button {{action 'savePost'}} id="add-post" class='ui button'>Post</button>
+    </form>
+  </div>
+</div>
