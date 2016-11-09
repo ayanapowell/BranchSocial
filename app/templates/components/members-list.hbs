@@ -17,6 +17,6 @@
    <h3>Friend Requests</h3>
    {{#each member.requests as |request|}}
    <li>{{request.name}} would like to add you as a friend
-   <button {{action "addFriend"  member request.sentById}} class="btn btn-success">+ Add Friend </button></li>
+   <button {{action "addFriend"  member request.sentById request}} class="btn btn-success">+ Add Friend </button></li>
    {{/each}}
  </div>
