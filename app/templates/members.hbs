@@ -1,13 +1,20 @@
-{{#link-to 'member-profile' model.member.id}}View Profile{{/link-to}}
-<br><br>
-{{search-member members=model.members search="search"}}<br>
-{{edit-member editInfo="editInfo" destroyMember="destroyMember" member=model.member}}
-{{add-post savePost="savePost" member=model.member}}
-{{model.member.screenName}}
-Your feed:<br><br>
-{{#each model.member.posts as |post|}}
-  {{post-tile post=post}}
-{{/each}}
-<br><br>
-{{display-results seach="search"}}
-{{new-group member=model.member addNewGroup="addNewGroup"}}
+<div class="row">
+  <div class="col-sm-4">
+    {{#link-to 'member-profile' model.member.id}}
+      <img id="member-avatar" class="img-responsive" src={{model.member.avatar}} onerror="this.src='http://www.pngall.com/wp-content/uploads/2016/05/Branch-Free-Download-PNG.png'">
+    {{/link-to}}
+  </div>
+  <div class="col-sm-8">
+    {{search-member members=model.members search="search"}}<br>
+    {{edit-member editInfo="editInfo" destroyMember="destroyMember" member=model.member}}
+    {{add-post savePost="savePost" member=model.member}}
+    {{model.member.screenName}}
+    Your feed:<br><br>
+    {{#each model.member.posts as |post|}}
+      {{post-tile post=post}}
+    {{/each}}
+    <br><br>
+    {{display-results seach="search"}}
+    {{new-group member=model.member addNewGroup="addNewGroup"}}
+  </div>
+</div>
