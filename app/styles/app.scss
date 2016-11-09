@@ -86,6 +86,33 @@ a:hover {
   height: 200px;
 }
 
+.connection-display {
+  li {
+    list-style-type: none;
+    margin-bottom: 5px;
+  }
+
+  i {
+    font-size: 1.2em;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .remove-connection {
+    color: $texas-rose;
+  }
+
+  .add-connection {
+    color: $ocean-green;
+  }
+
+  .pending-connection {
+    color: $astral-blue;
+  }
+}
+
 #update-form {
   display: block;
   margin: auto 15%;
