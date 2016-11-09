@@ -81,6 +81,11 @@ a:hover {
   margin-top: -23px !important;
 }
 
+#chatDisplay {
+  height: 200px;
+  overflow: scroll;
+}
+
 .profile-detail img {
   width: 180px;
   height: 180px;

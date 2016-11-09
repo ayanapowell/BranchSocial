@@ -1,8 +1,8 @@
 <h2>{{model.group.name}}</h2>
 <h4>{{model.group.description}}</h4>
 
-{{chat-display messages=model.group.messages}}
-<br>
-{{message-new member=model.member group=model.group sendMessage="sendMessage"}}
-<hr>
+<div class='well'>
+  {{chat-display messages=model.group.messages}}
+  {{message-new member=model.member group=model.group sendMessage="sendMessage"}}
+</div>
 {{chat-member-add members=model.group.members group=model.group addMemberToGroup="addMemberToGroup" removeMemberFromGroup="removeMemberFromGroup"}}
