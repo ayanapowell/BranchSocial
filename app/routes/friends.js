@@ -42,17 +42,17 @@ export default Ember.Route.extend({
         });
       });
     },
-    uploadImage(){
-      let image =  document.getElementById('imageToUpload');
-      let name = "chris";
-      let file =image.files[0];
-      console.log(file);
-      const storageRef = this.get('firebaseApp').storage().ref('images/'+file.name);
-      storageRef.put(file).then(function(snapshot){
-        let url = snapshot.metadata.downloadURLs[0];
-        console.log(snapshot.metadata);
-      });
-      console.log(storageRef);
-    }
+    // uploadImage(){
+    //   let image =  document.getElementById('imageToUpload');
+    //   let name = "chris";
+    //   let file =image.files[0];
+    //   console.log(file);
+    //   const storageRef = this.get('firebaseApp').storage().ref('images/'+file.name);
+    //   storageRef.put(file).then(function(snapshot){
+    //     let url = snapshot.metadata.downloadURLs[0];
+    //     console.log(snapshot.metadata);
+    //   });
+    //   console.log(storageRef);
+    // }
   } //end action
 });

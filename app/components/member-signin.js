@@ -22,8 +22,8 @@ export default Ember.Component.extend({
         params = {
           email: '',
           password: ''
-        }
-      };
+        };
+      }
       this.get('session').open('firebase', { provider: provider, email: params.email, password: params.password}).then(function(data) {
         var newEmail = data.currentUser.email;
         _this.get('store').query('member', {
@@ -34,11 +34,11 @@ export default Ember.Component.extend({
             console.log('got here!');
             _this.sendAction('goToMembers');
           }
-        })
+        });
       }).catch(function(err) {
         console.log(err.message);
         _this.set('error', err.message);
-      });;
+      });
     },
     clickShowForms() {
       this.set('showForms', true);

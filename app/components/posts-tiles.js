@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  sortBy: ['date:desc'],
+  sortedFriendList: Ember.computed.sort('friendList', 'sortBy'),
   friendList: Ember.computed("member.friends", function() {
     var friends = [];
     var posts = [];
