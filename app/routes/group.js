@@ -7,7 +7,7 @@ export default Ember.Route.extend({
     return Ember.RSVP.hash({
       group: this.store.findRecord('group', params.group_id),
       member: this.store.findRecord('member', this.get('session').get('currentUser').uid)
-    })
+    });
   },
 
   actions: {
@@ -24,14 +24,14 @@ export default Ember.Route.extend({
       group.get('members').addObject(foundMember);
       foundMember.save().then(function() {
         return group.save();
-      })
+      });
     },
     removeMemberFromGroup(member, group) {
       member.get('groups').removeObject(group);
       group.get('members').removeObject(member);
       member.save().then(function() {
         return group.save();
-      })
+      });
     }
   }
 });

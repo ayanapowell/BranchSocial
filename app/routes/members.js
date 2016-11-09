@@ -11,7 +11,7 @@ export default Ember.Route.extend({
       members: this.store.findAll('member'),
     }).catch(function(err) {
       console.log(err);
-    })
+    });
   },
   actions: {
     editInfo(member, params){
@@ -41,7 +41,6 @@ export default Ember.Route.extend({
     },
     search(search) {
       console.log(search);
-      console.log(model.members);
       // this.members.forEach(function(member) {
       //   if(member.firstName === search) {
       //     alert("We found a match!");

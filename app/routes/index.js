@@ -28,7 +28,7 @@ export default Ember.Route.extend({
           email: '',
           password: ''
         }
-      }
+      };
       this.get('session').open('firebase', { provider: provider, email: params.email, password: params.password}).then(function(data) {
         var newEmail = data.currentUser.email;
         _this.get('store').query('member', {

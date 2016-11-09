@@ -8,7 +8,7 @@ export default Ember.Component.extend({
         content: this.get('content'),
         date: date,
         member: this.get('member')
-      }
+      };
       $('#add-post').trigger('reset');
       this.sendAction('savePost', params);
     }

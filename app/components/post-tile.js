@@ -19,7 +19,7 @@ export default Ember.Component.extend({
       var params = {
         content: this.get('content'),
         date: date
-      }
+      };
       this.sendAction('updatePost', params, post);
     },
     showForm() {
@@ -35,7 +35,7 @@ export default Ember.Component.extend({
         content: this.get('commentContent'),
         date: date,
         member: this.get('member')
-      }
+      };
 
       this.sendAction('saveComment', post, params);
     }

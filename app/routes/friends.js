@@ -8,7 +8,7 @@ export default Ember.Route.extend({
       members: this.store.findAll('member'),
     }).catch(function(err) {
       console.log(err);
-    })
+    });
   },
   actions:{
     sendFriendRequest(listMember, member){
@@ -51,7 +51,7 @@ export default Ember.Route.extend({
       storageRef.put(file).then(function(snapshot){
         let url = snapshot.metadata.downloadURLs[0];
         console.log(snapshot.metadata);
-      })
+      });
       console.log(storageRef);
     }
   } //end action
