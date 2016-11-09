@@ -2,7 +2,7 @@
   <h4>Group Members</h4>
   <ul>
     {{#each members as |member|}}
-      <li>{{member.screenName}} <button {{action 'removeFromGroup' member group}}>Remove</button></li>
+      <li>{{#link-to 'member-profile' member.id}}{{member.screenName}}{{/link-to}} <button {{action 'removeFromGroup' member group}}>Remove</button></li>
     {{/each}}
   </ul>
 
