@@ -48,8 +48,9 @@ export default Ember.Route.extend({
       let file =image.files[0];
       console.log(file);
       const storageRef = this.get('firebaseApp').storage().ref('images/'+file.name);
-      storageRef.put(file).then(function(){
-        console.log("uploaded?");
+      storageRef.put(file).then(function(snapshot){
+        let url = snapshot.metadata.downloadURLs[0];
+        console.log(snapshot.metadata);
       })
       console.log(storageRef);
     }
