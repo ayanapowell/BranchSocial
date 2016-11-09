@@ -1,10 +1,5 @@
-
-<!-- More info about our site. Why you should sign up! -->
-
 {{#if session.isAuthenticated}}
   {{new-member registerMember="registerMember"}}
-  <button class="ui button" {{action "signOut"}}>Sign out</button>  <!-- move this to nav bar? -->
-
 {{else}}
   <div class='row text-center'>
     <div class='jumbotron'>
