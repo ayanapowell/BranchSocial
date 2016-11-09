@@ -18,6 +18,20 @@ export default Ember.Route.extend({
       newMessage.save().then(function(){
         return group.save();
       });
+    },
+    addMemberToGroup(foundMember, group) {
+      foundMember.get('groups').addObject(group);
+      group.get('members').addObject(foundMember);
+      foundMember.save().then(function() {
+        return group.save();
+      })
+    },
+    removeMemberFromGroup(member, group) {
+      member.get('groups').removeObject(group);
+      group.get('members').removeObject(member);
+      member.save().then(function() {
+        return group.save();
+      })
     }
   }
 });

@@ -47,6 +47,17 @@ export default Ember.Route.extend({
       //     alert("We found a match!");
       //   }
       // });
+    },
+    addNewGroup(params, member) {
+      var newGroup = this.store.createRecord('group', params);
+      var owner = member;
+      newGroup.save();
+      owner.get('groups').addObject(newGroup);
+      newGroup.get('members').addObject(owner);
+      newGroup.save().then(function() {
+        return owner.save();
+      });
+      this.transitionTo('group', newGroup);
     }
   }
 });

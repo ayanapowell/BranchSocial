@@ -1,0 +1,8 @@
+<div class="well">
+  <h3>Create a new Group</h3>
+  <label for="">Group Name:</label>
+  {{input value=newGroupName id="newGroupName" class="form-control"}}
+  <label for="">Description:</label>
+  {{input value=newGroupDescription id="newGroupDescription" class="form-control"}}
+  <button class="ui button" {{action "addNewGroup" member}}>Create</button>
+</div>

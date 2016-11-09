@@ -1,0 +1,7 @@
+<div class="comment-tile">
+  {{#link-to 'member-profile' comment.member.id}}<img src={{comment.member.avatar}} onerror="this.src='http://www.pngall.com/wp-content/uploads/2016/05/Branch-Free-Download-PNG.png'">{{/link-to}}<br>
+  {{#link-to 'member-profile' comment.member.id}}{{comment.member.firstName}}{{/link-to}}<br>
+  {{comment.content}}<br>
+  {{moment-from-now comment.date}}
+  <hr>
+</div>

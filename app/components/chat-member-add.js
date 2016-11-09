@@ -15,6 +15,12 @@ export default Ember.Component.extend({
       }).then(function(response){
         _this.set('foundMember', response.get('firstObject'));
       });
+    },
+    addToGroup(foundMember, group) {
+      this.sendAction('addMemberToGroup', foundMember, group);
+    },
+    removeFromGroup(member, group) {
+      this.sendAction('removeMemberFromGroup', member, group);
     }
   }
 });
