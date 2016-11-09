@@ -1,60 +1,36 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  session: Ember.inject.service(),
-  showForm: false,
-  isOwner: Ember.computed("this.get('session')", "this.get('post')",  function() {
-    if(this.get('session').get('currentUser').uid === this.get('post').get('member').get('id')) {
-      return true;
-    } else {
-      return false;
-    }
-  }),
-  // still a work in progress. Everything works until it hits the return statement. gaddamn it!!
-  postList: Ember.computed("this.get('member')", function() {
-    var postList = [];
-    var friendList = [];
+  friendList: Ember.computed("member.friends", function() {
+    var friends = [];
     var posts = [];
-    var friends = this.get('member').get('friends');
-    friends.forEach(function(friend) {
-      friendList.push(friend);
+    var thisObj = this;
+    this.get('member').get('friends').then(function(response) {
+      response.forEach(function(friend) {
+        friends.addObject(friend);
+      });
+
+      friends.forEach(function(friend) {
+        friend.get('posts').then(function(result) {
+          posts.addObjects(result);
+        });
+      });
+      thisObj.set('friendList', posts);
     });
-    friendList.forEach(function(friend) {
-      postList.push(friend.get('posts'));
-    });
-    postList.forEach(function(post) {
-      posts.push(post);
-    });
-    console.log(posts[0]);
-    return;
   }),
+
+  postList: Ember.computed("friendList", function() {
+  }),
+
   actions: {
     deletePost(params) {
       this.sendAction('deletePost', params);
     },
-    updatePost(post) {
-      var date = moment().format('LLLL');
-      var params = {
-        content: this.get('content'),
-        date: date
-      };
+    updatePost(params, post) {
       this.sendAction('updatePost', params, post);
     },
-    showForm() {
-      if (this.showForm === false) {
-        this.set('showForm', true);
-      } else {
-        this.set('showForm', false);
-      }
-    },
-    saveComment(post) {
-      var date = moment().format('LLLL');
-      var params = {
-        content: this.get('commentContent'),
-        date: date,
-        member: this.get('member')
-      };
-
+    saveComment(post, params) {
+      console.log("post-tiles");
       this.sendAction('saveComment', post, params);
     }
   }

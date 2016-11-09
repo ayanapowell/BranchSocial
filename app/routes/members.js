@@ -13,6 +13,7 @@ export default Ember.Route.extend({
       console.log(err);
     });
   },
+
   actions: {
     editInfo(member, params){
       console.log(member.get('firstName'));
@@ -24,7 +25,6 @@ export default Ember.Route.extend({
       member.save();
       this.transitionTo('members');
     },
-
     destroyMember(member){
       member.destroyRecord();
       this.transitionTo('index');
@@ -38,6 +38,17 @@ export default Ember.Route.extend({
         return member.save();
       });
       this.transitionTo('members');
+    },
+    deletePost(params) {
+      params.destroyRecord();
+    },
+    updatePost(params, post) {
+      Object.keys(params).forEach(function(key) {
+        if(params[key] !== undefined) {
+          post.set(key, params[key]);
+        }
+      });
+      post.save();
     },
     search(search) {
       console.log(search);
@@ -57,6 +68,16 @@ export default Ember.Route.extend({
         return owner.save();
       });
       this.transitionTo('group', newGroup);
+    },
+    saveComment(post, params) {
+      var newComment = this.store.createRecord('comment', params);
+      var member = params.member;
+      post.get('comments').addObject(newComment);
+      member.get('comments').addObject(newComment);
+      newComment.save().then(function() {
+        member.save();
+        post.save();
+      });
     }
   }
 });

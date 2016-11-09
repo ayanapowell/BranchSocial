@@ -8,11 +8,8 @@
     {{search-member members=model.members search="search"}}<br>
     {{edit-member editInfo="editInfo" destroyMember="destroyMember" member=model.member}}
     {{add-post savePost="savePost" member=model.member}}
-    {{model.member.screenName}}
-    Your feed:<br><br>
-    {{#each model.member.posts as |post|}}
-      {{post-tile post=post}}
-    {{/each}}
+    <h3>Your feed:</h3>
+    {{posts-tiles member=model.member deletePosts="deletePost" updatePost="updatePost" saveComment="saveComment"}}
     <br><br>
     {{display-results seach="search"}}
     {{group-list member=model.member}}

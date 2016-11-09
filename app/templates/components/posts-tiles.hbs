@@ -1,30 +1,3 @@
-{{#each postList as |post|}}
-  <div class="well">
-  <div>{{post.content}}</div>
-  <div>
-    <em>{{moment-from-now post.date}}</em>
-  </div>
-  {{#if isOwner}}
-    <button {{action 'deletePost' post}} class="btn btn-danger">Delete</button>
-    <button {{action 'showForm'}} class="btn btn-warning">Update</button>
-  {{/if}}
-  <br>
-  {{#if showForm}}
-    <div class="form-group">
-      {{input value=content placeholder=post.content class='form-control'}}
-    </div>
-    <button {{action 'updatePost' post}} class='btn btn-primary'>Post</button>
-  {{/if}}
-
-  <!-- Leave a comment -->
-  <form>
-    <div class="form-group">
-      {{input value=commentContent placeholder="Leave a comment" class="form-control"}}
-    </div>
-    <button {{action 'saveComment' post}} class="ui button">post</button>
-  </form>
-  {{#each post.comments as |comment|}}
-    {{comment-tile comment=comment}}
-  {{/each}}
-  </div>
+{{#each friendList as |post|}}
+  {{feed-tile member=member post=post deletePosts="deletePost" updatePost="updatePost" saveComment="saveComment"}}
 {{/each}}
