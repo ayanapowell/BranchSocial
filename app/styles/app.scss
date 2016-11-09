@@ -63,6 +63,16 @@ a:hover {
   cursor: pointer;
 }
 
+.form-buttons {
+  text-align: right;
+  padding: 7px !important;
+}
+
+#update-form {
+  display: block;
+  margin: auto 15%;
+}
+
 #sign-in-nav {
   margin-left: auto;
   margin-right: 0;
@@ -117,9 +127,19 @@ a:hover {
 
 #account-options {
   text-align: center;
-  margin-top: 10px;
+  margin: 10px;
 }
 
 #update-form {
   margin-top: 10px;
+}
+
+#editInfoModal {
+  margin-top: 10%;
+}
+
+#close-button {
+  background-color: transparent;
+  color: $astral-blue;
+  border: 1px solid $astral-blue;
 }
