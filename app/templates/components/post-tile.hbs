@@ -3,8 +3,8 @@
   <div>
     <em>{{moment-from-now post.date}}</em>
   </div>
-  <button {{action 'deletePost' post}} class="btn btn-danger">Delete</button>
-  <button {{action 'showForm'}} class="btn btn-warning">Update</button>
+  <i {{action 'deletePost' post}} class="remove large icon"></i>
+  <i {{action 'showForm'}} class="write large icon"></i>
   {{#if showForm}}
     <div class="form-group">
       {{input value=content placeholder=post.content class='form-control'}}

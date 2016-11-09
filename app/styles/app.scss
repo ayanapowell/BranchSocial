@@ -45,6 +45,12 @@ a:hover {
   box-shadow: 1.5px 1.5px $silver;
 }
 
+.profile-detail img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+}
+
 #sign-in-nav {
   margin-left: auto;
   margin-right: 0;
@@ -79,10 +85,4 @@ a:hover {
 #triangle{
   margin-left: 100px;
   margin-top: -23px !important;
-}
-
-.profile-detail img {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
 }
