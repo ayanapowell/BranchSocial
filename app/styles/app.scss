@@ -80,6 +80,7 @@ a:hover {
 
 #add-post {
   margin: auto !important;
+  text-align: right;
 }
 
 #delete-account {
@@ -142,4 +143,12 @@ a:hover {
   background-color: transparent;
   color: $astral-blue;
   border: 1px solid $astral-blue;
+}
+
+#thinking-column {
+  margin-left: 8%;
+}
+
+#thinking {
+  width: 100px;
 }

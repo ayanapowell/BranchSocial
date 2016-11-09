@@ -6,10 +6,13 @@
 {{#if session.isAuthenticated}}
   <div class="ui inverted menu">
     <div id="sign-in-nav" class="item">
-      Search
+      <div class="ui icon input">
+        <input type="text">
+        <i class="search link icon"></i>
+      </div>
     </div>
     <div class="item">
-      Settings
+      <i class="settings large icon"></i>
     </div>
     <div {{action "signOut"}} class="item">
       Sign Out &nbsp;	<i class="sign out large icon"></i>
