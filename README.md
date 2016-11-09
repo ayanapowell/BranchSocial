@@ -5,6 +5,7 @@
 * April Peng - Back-End Developer
 * Chris Martinez - Back-End Developer
 * Sheena Nickerson - Back-End Developer
+* Ayana Powell - Back-End Developer
 * Katrina Hirsch - Front-End Developer
 * Kevin Johnston - Front-End Developer
 
