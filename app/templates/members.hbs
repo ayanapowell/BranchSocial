@@ -12,12 +12,10 @@
     {{new-group member=model.member addNewGroup="addNewGroup"}}
   </div>
   <div class="col-sm-8">
-        {{add-post savePost="savePost" member=model.member}}
-        <hr>
-        {{model.member.screenName}}
-        Your feed:<br><br>
-        {{#each model.member.posts as |post|}}
-          {{post-tile post=post}}
-        {{/each}}
+    {{add-post savePost="savePost" member=model.member}}
+    <hr>
+    {{model.member.screenName}}
+    Your feed:<br><br>
+    {{posts-tiles member=model.member deletePosts="deletePost" updatePost="updatePost" saveComment="saveComment"}}
   </div>
 </div>
