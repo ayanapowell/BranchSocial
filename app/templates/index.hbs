@@ -3,18 +3,23 @@
 
 {{#if session.isAuthenticated}}
   {{new-member registerMember="registerMember"}}
-
-  Logged in as {{session.currentUser.displayName}} <!-- keep this just for now for verification -->
-
   <button class="ui button" {{action "signOut"}}>Sign out</button>  <!-- move this to nav bar? -->
 
 {{else}}
-  <div class='col-sm-6'>
-    <h2>Sign Up</h2>
-    {{member-signup signIn="signIn" signUp="signUp"}}
-  </div>
-  <div class='col-sm-6'>
-    <h2>Log In</h2>
-    {{member-signin signIn="signIn"}}
+  <div class='text-center'>
+    <div class='jumbotron'>
+      <h2>Welcome to pdxBranch!</h2>
+      <p>A hub for collaboration</p>
+    </div>
+    <div class='col-sm-6'>
+      <h2>New to pdxBranch?</h2>
+      <p>Make a profile and start collaborating</p>
+      {{member-signup signIn="signIn" signUp="signUp" goToMembers="goToMembers"}}
+    </div>
+    <div class='col-sm-6'>
+      <h2>Returning Members</h2>
+      <p>Get back to work here</p>
+      {{member-signin signIn="signIn" signInError=signInError goToMembers="goToMembers"}}
+    </div>
   </div>
 {{/if}}

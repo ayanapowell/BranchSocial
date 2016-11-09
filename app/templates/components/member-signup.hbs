@@ -1,15 +1,22 @@
 <div>
-  <h3>Sign up with GitHub</h3>
-  <button class="ui button" {{action "githubSignUp" "github"}}>Sign up with Github</button>
-  <hr>
-  <h3>Sign up with Email</h3>
-  <div class='form-group'>
-    <label for='newEmail'>Email:</label>
-    {{input id='newEmail' value=newEmail class='form-control' enter='emailSignUp'}}
-  </div>
-  <div class='form-group'>
-    <label for='newPassword'>Password:</label>
-    {{input type='password' id='newPassword' value=newPassword class='form-control' enter='emailSignUp'}}
-  </div>
-  <button class="ui button" {{action 'emailSignUp'}}>Sign up with Email</button>
+  {{#if showForms}}
+    <h3>Sign up with GitHub</h3>
+    <button class="ui button" {{action "githubSignUp" "github"}}>Sign up with Github</button>
+    <hr>
+    <h3>Sign up with Email</h3>
+    <div class='form-group'>
+      <label for='newEmail'>Email:</label>
+      {{input id='newEmail' value=newEmail class='form-control' enter='emailSignUp'}}
+    </div>
+    <div class='form-group'>
+      <label for='newPassword'>Password:</label>
+      {{input type='password' id='newPassword' value=newPassword class='form-control' enter='emailSignUp'}}
+    </div>
+    <button class="ui button" {{action 'emailSignUp' 'signUp'}}>Sign up with Email</button>
+    {{#if error}}
+      <h4>Error: {{error}}</h4>
+    {{/if}}
+  {{else}}
+    <button class="ui button" {{action "clickShowForms"}}>Sign up now!</button>
+  {{/if}}
 </div>

@@ -6,17 +6,14 @@ export default Ember.Route.extend({
     return this.get('session').fetch().catch(function() {});
   },
   actions: {
-    signUp(params) {
-      var _this = this;
-      this.get('firebaseApp').auth().createUserWithEmailAndPassword(params.email, params.password).then(function(data) {
-        _this.refresh();
-      }).catch(function(err) {
-        console.log(err);
-      });
+    signUp() {
+      this.refresh();
+    },
+    goToMembers() {
+      this.transitionTo('members');
     },
     registerMember(params){
       var newMember = this.store.createRecord('member', params);
-      console.log(newMember.get('firstName'));
       newMember.save();
       alert("member saved?");
       this.transitionTo('members');
@@ -38,6 +35,8 @@ export default Ember.Route.extend({
           if (response.get('firstObject')) {
             _this.transitionTo('members');
           }
+        }).catch(function(err) {
+          console.log(err.message);
         });
       });
     }
