@@ -1,4 +1,8 @@
-# pdxBranch
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/mlawson3691/branch-social/master/public/favicon.png">
+  # pdxBranch
+</p>
 
 ### Development Team:
 * Mark Lawson - Project Manager, Back-End Developer
@@ -51,6 +55,9 @@ To report an issue, please visit the [Github Issues page](https://github.com/mla
 * CSS (Bootstrap/Semantic UI)
 * JavaScript (Ember.js/Handlebars.js/PhantomJS)
 * Node.js (NPM/Bower)
+* Sketch
+* InVision
+* Google Fonts
 * [Flaticon](http://flaticon.com)
 
 ### License
