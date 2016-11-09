@@ -1,16 +1,17 @@
-<div class='row'>
+<div class='row connection-display'>
   <div class='col-sm-6'>
-    <div class="well">
-      <h3>Pending Connection Requests</h3>
-      {{#each member.requests as |request|}}
-      <li>{{request.name}} would like to add you as a friend
-      <button {{action "addFriend"  member request.sentById request}} class="btn btn-success">+ Add Friend </button></li>
-      {{/each}}
-    </div>
+    {{#if member.requests}}
+      <div class="well">
+        <h3>Pending Connection Requests</h3>
+        {{#each member.requests as |request|}}
+        <li><i {{action "addFriend"  member request.sentById request}} class="add user icon pending-connection"></i> {{request.name}} would like to add you as a friend</li>
+        {{/each}}
+      </div>
+    {{/if}}
     <div class="well">
       <h3>My Connections</h3>
       {{#each member.friends as |friend|}}
-      <li>{{friend.firstName}} {{friend.lastName}} - {{friend.screenName}} <button {{action "removeFriend" friend member}} class="btn btn-danger"> Remove Friend :( </button></li>
+      <li><i class="remove user icon remove-connection" {{action "removeFriend" friend member}}></i> {{friend.firstName}} {{friend.lastName}} - {{friend.screenName}}</li>
       {{/each}}
     </div>
   </div>
@@ -18,7 +19,7 @@
     <div class="well">
       <h3>Make a Connection</h3>
       {{#each members as |listMember|}}
-      <li>{{listMember.firstName}} {{listMember.lastName}} - {{listMember.screenName}} <button {{action "sendFriendRequest" listMember member}} class="btn btn-warning">Send Friend Request</button></li>
+      <li><i {{action "sendFriendRequest" listMember member}} class="add user icon add-connection"></i> {{listMember.firstName}} {{listMember.lastName}} - {{listMember.screenName}}</li>
       {{/each}}
     </div>
   </div>
