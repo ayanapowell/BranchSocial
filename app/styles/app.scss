@@ -84,8 +84,8 @@ a:hover {
   margin-top: 20px;
 }
 
-.spacer {
-  height: 200px;
+.edit-options {
+  float: right;
 }
 
 #update-form {
@@ -160,7 +160,7 @@ a:hover {
 }
 
 #thinking {
-  width: 100px;
+  width: 100px !important;
 }
 
 #collaboration {
@@ -184,3 +184,20 @@ a:hover {
 #sign-in-link {
   cursor: pointer;
 }
+
+#comment-image {
+  height: 40px;
+  width: auto;
+  border-radius: 50%;
+
+}
+
+#delete-post-icon {
+  color: $texas-rose;
+  cursor: pointer;
+}
+
+ #update-post-icon {
+   color: $ocean-green;
+   cursor: pointer;
+ }

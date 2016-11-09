@@ -20,7 +20,7 @@
     <div class="form-group">
       {{input value=commentContent placeholder="Leave a comment" class="form-control"}}
     </div>
-    <button {{action 'saveComment' post}} class="ui button">post</button>
+    <button {{action 'saveComment' post}} class="ui button">Post</button>
   </form>
   {{#each post.comments as |comment|}}
     {{comment-tile comment=comment}}
