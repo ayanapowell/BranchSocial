@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  firebaseApp: Ember.inject.service(),
   model(){
     return Ember.RSVP.hash({
       member: this.store.findRecord('member', this.get('session').get('currentUser').uid),
@@ -41,7 +42,16 @@ export default Ember.Route.extend({
         });
       });
     },
-
+    uploadImage(){
+      let image =  document.getElementById('imageToUpload');
+      let name = "chris";
+      let file =image.files[0];
+      console.log(file);
+      const storageRef = this.get('firebaseApp').storage().ref('images/'+file.name);
+      storageRef.put(file).then(function(){
+        console.log("uploaded?");
+      })
+      console.log(storageRef);
+    }
   } //end action
-
 });
