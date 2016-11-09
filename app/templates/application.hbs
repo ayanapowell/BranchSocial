@@ -36,16 +36,15 @@
 
 <div class="container">
   {{outlet}}
+</div>
 
   {{#if session.isAuthenticated}}
-    <footer id="footer">
+    <footer class="footer">
       <h6>About Us | Privacy Policy</h6>
       <h6>&copy; 2016 pdxBranch</h6>
     </footer>
   {{else}}
-    <footer id="footer">
+    <footer class="footer">
       <h6>&copy; 2016 pdxBranch</h6>
     </footer>
   {{/if}}
-
-</div>

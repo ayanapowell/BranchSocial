@@ -6,20 +6,19 @@
   <button class="ui button" {{action "signOut"}}>Sign out</button>  <!-- move this to nav bar? -->
 
 {{else}}
-  <div class='text-center'>
+  <div class='row text-center'>
     <div class='jumbotron'>
-      <h2>Welcome to pdxBranch!</h2>
-      <p>A hub for collaboration</p>
+      <h1>pdxBranch</h1>
+      <img id="collaboration" src="/assets/images/collaboration-orange.png">
+      <p>A Hub for Collaboration</p>
     </div>
     <div class='col-sm-6'>
-      <h2>New to pdxBranch?</h2>
-      <p>Make a profile and start collaborating</p>
       {{member-signup signIn="signIn" signUp="signUp" goToMembers="goToMembers"}}
     </div>
     <div class='col-sm-6'>
-      <h2>Returning Members</h2>
-      <p>Get back to work here</p>
       {{member-signin signIn="signIn" signInError=signInError goToMembers="goToMembers"}}
     </div>
+  </div>
+  <div class="spacer">
   </div>
 {{/if}}

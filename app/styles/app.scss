@@ -11,6 +11,10 @@ body {
   background-repeat: repeat;
 }
 
+h1 {
+  margin: 0 !important;
+}
+
 h3 {
   font-family: 'Ubuntu', sans-serif !important;
 }
@@ -68,6 +72,22 @@ a:hover {
   padding: 7px !important;
 }
 
+.jumbotron {
+  background-color: $white;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.footer {
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.spacer {
+  height: 200px;
+}
+
 #update-form {
   display: block;
   margin: auto 15%;
@@ -91,12 +111,6 @@ a:hover {
   color: $astral-blue;
   background-color: transparent;
   border: 1px solid $astral-blue;
-}
-
-#footer {
-  text-align: center;
-  padding: 10px;
-  margin-top: 20px;
 }
 
 #header {
@@ -147,4 +161,26 @@ a:hover {
 
 #thinking {
   width: 100px;
+}
+
+#collaboration {
+  margin: 15px;
+}
+
+#sign-up-form {
+  padding: 10px;
+  margin-top: 60%;
+}
+
+#sign-up-link {
+  cursor: pointer;
+}
+
+#sign-in-form {
+  padding: 10px;
+  margin-top: 60%;
+}
+
+#sign-in-link {
+  cursor: pointer;
 }
