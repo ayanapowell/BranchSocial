@@ -1,13 +1,13 @@
 <div class="row well">
-  <div id="thinking-column" class="col-sm-2">
-    <img id="thinking" src="/assets/images/thinking.png">
+  <div class="col-sm-2">
+    <img class="img-responsive" src="/assets/images/thinking.png">
   </div>
   <div class="col-sm-10">
-    <form id='add-post'>
+    <form id="add-post">
       <div class="form-group">
         {{textarea rows=3 value=content placeholder='What are you thinking?' class='form-control'}}
       </div>
-      <button {{action 'savePost'}} id="add-post" class='ui button'>Post</button>
+      <button {{action 'savePost'}} class='ui button'>Post</button>
     </form>
   </div>
 </div>

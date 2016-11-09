@@ -53,12 +53,6 @@ a:hover {
   box-shadow: 1.5px 1.5px $silver;
 }
 
-.profile-detail img {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-}
-
 .sign.out.large.icon {
   cursor: pointer;
 }
@@ -111,6 +105,12 @@ a:hover {
   .pending-connection {
     color: $astral-blue;
   }
+}
+
+#profile-img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
 }
 
 #update-form {
@@ -182,10 +182,6 @@ a:hover {
   background-color: transparent;
   color: $astral-blue;
   border: 1px solid $astral-blue;
-}
-
-#thinking {
-  width: 100px !important;
 }
 
 #collaboration {
