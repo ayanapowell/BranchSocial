@@ -1,12 +1,14 @@
 <div class="well">
+  {{#if isOwner}}
+  <div class="edit-options">
+    <i {{action 'deletePost' post}} id="update-post-icon" class="remove icon"></i>
+    <i {{action 'showForm'}} id="delete-post-icon" class="write icon"></i>
+  </div>
+  {{/if}}
   <div>{{post.content}}</div>
   <div>
     <em>{{moment-from-now post.date}}</em>
   </div>
-  {{#if isOwner}}
-  <i {{action 'deletePost' post}} class="remove large icon"></i>
-  <i {{action 'showForm'}} class="write large icon"></i>
-  {{/if}}
 <br>
   {{#if showForm}}
     <div class="form-group">
