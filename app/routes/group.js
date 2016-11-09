@@ -44,5 +44,8 @@ export default Ember.Route.extend({
         return group.save();
       });
     },
+    deletePost(params) {
+      params.destroyRecord();
+    }
   }
 });

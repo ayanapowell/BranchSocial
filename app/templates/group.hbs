@@ -10,7 +10,7 @@
   </div>
   <div class="col-sm-3">
     <h4>Add inspiration and instant references!</h4>
-    <!-- {{post-tile post=post savePost="savePost" deletePost="deletePost" updatePost="updatePost"}} -->
+    {{group-post-list posts=model.group.groupPosts deletePost="deletePost"}}
     {{add-group-post group=model.group member=model.member savePost="savePost"}}
   </div>
 </div>

@@ -1,0 +1,10 @@
+<div class="well">
+  <div>{{post.content}}</div>
+  <div>~by {{post.member.screenName}}~</div>
+  {{#if isOwner}}
+  <i {{action 'deletePost' post}} class="remove large icon pull-right"></i>
+  {{/if}}
+  <div>
+    <em>{{moment-from-now post.date}}</em>
+  </div>
+</div>
