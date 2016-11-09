@@ -15,7 +15,6 @@ export default Ember.Route.extend({
     registerMember(params){
       var newMember = this.store.createRecord('member', params);
       newMember.save();
-      alert("member saved?");
       this.transitionTo('members');
     },
     signIn: function(provider, params) {
@@ -27,6 +26,7 @@ export default Ember.Route.extend({
         }
       };
       this.get('session').open('firebase', { provider: provider, email: params.email, password: params.password}).then(function(data) {
+        console.log(_this.get('session').get('currentUser').photoURL);
         var newEmail = data.currentUser.email;
         _this.get('store').query('member', {
           orderBy: 'email',

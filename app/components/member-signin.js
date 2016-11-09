@@ -17,7 +17,6 @@ export default Ember.Component.extend({
       };
       this.set('email', '');
       this.set('password', '');
-      // this.sendAction('signIn', provider, params);
       var _this = this;
       if (params === undefined) {
         params = {
