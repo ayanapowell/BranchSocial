@@ -1,4 +1,7 @@
-<br><h2>{{model.group.name}}<span class="group-description">{{model.group.description}}</span></h2><br>
+<div class="row">
+  {{group-header-display group=model.group deleteGroup="deleteGroup" updateGroup="updateGroup"}}
+</div>
+
 <div class="row">
   <div class="col-sm-9">
       <div class='well chatroom-well'>
