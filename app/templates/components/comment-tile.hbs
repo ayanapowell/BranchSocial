@@ -1,5 +1,10 @@
 <div class="row comment-tile">
-
+  {{#if isOwner}}
+    <div class="edit-options">
+      <i {{action 'showForm'}} id="update-comment-icon" class="write icon"></i>
+      <i {{action 'deleteComment' comment}} id="delete-comment-icon" class="remove icon"></i>
+    </div>
+  {{/if}}
   <div class="col-sm-1 col-sm-offset-1">
     {{#link-to 'member-profile' comment.member.id}}<img src={{comment.member.avatar}} onerror="this.src='http://www.pngall.com/wp-content/uploads/2016/05/Branch-Free-Download-PNG.png'"  id="comment-image">{{/link-to}}<br>
     {{#link-to 'member-profile' comment.member.id}}{{comment.member.firstName}}{{/link-to}}
@@ -7,6 +12,12 @@
   <div class="col-sm-10">
     {{comment.content}}<br>
     <em><small>{{moment-from-now comment.date}}</small></em>
+    {{#if showForm}}
+      <div id="update-comment-form">
+        {{input value=editComment placeholder=comment.content class='form-control'}}
+        <button {{action 'updateComment' comment}} class='ui button tiny'>Update</button>
+      </div>
+    {{/if}}
   </div>
 </div>
 <hr>
