@@ -1,13 +1,20 @@
 <div class="well">
   {{#if isOwner}}
   <div class="edit-options">
-    <i {{action 'deletePost' post}} id="update-post-icon" class="remove icon"></i>
-    <i {{action 'showForm'}} id="delete-post-icon" class="write icon"></i>
+    <i {{action 'showForm'}} id="update-post-icon" class="write icon"></i>
+    <i {{action 'deletePost' post}} id="delete-post-icon" class="remove icon"></i>
   </div>
   {{/if}}
-  <div>{{post.content}}</div>
-  <div>
-    <em>{{moment-from-now post.date}}</em>
+  <div class="row">
+    <div class="col-sm-2 text-center">
+      {{#link-to 'member-profile' post.member.id}}<img src={{post.member.avatar}} onerror="this.src='http://www.pngall.com/wp-content/uploads/2016/05/Branch-Free-Download-PNG.png'"  id="post-image">{{/link-to}}<br>
+      {{#link-to 'member-profile' post.member.id}}{{post.member.firstName}}{{/link-to}}
+    </div>
+
+    <div class="col-sm-10">
+      <h4 id="post-content">{{post.content}}</h4>
+      <em><small>{{moment-from-now post.date}}</small></em>
+    </div>
   </div>
 <br>
   {{#if showForm}}
