@@ -2,8 +2,8 @@ $ocean-green: #4AA772;
 $astral-blue: #3688A4;
 $texas-rose: #FFAC55;
 $white: #FFF;
-$black: #000;
 $silver: #ccc;
+$black: #000;
 
 body {
   font-family: 'Ubuntu', sans-serif !important;
@@ -118,8 +118,6 @@ a:hover {
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 10px;
-  // display: block;
-  // margin: auto;
 }
 
 #friend-avatar {
@@ -127,7 +125,6 @@ a:hover {
   width: 40px;
   border-radius: 50%;
   margin-right: 5px;
-
 }
 
 #update-form {
@@ -146,7 +143,7 @@ a:hover {
 }
 
 #update-post-form,
-#update-comment-form  {
+  #update-comment-form  {
   padding-top: 20px;
 }
 
@@ -227,8 +224,6 @@ a:hover {
   height: 40px;
   width: auto;
   border-radius: 50%;
-
-
 }
 
 #post-image {
@@ -236,11 +231,10 @@ a:hover {
   width: auto;
   border-radius: 50%;
   margin-right: 5px;
-
 }
 
 #delete-post-icon,
-#delete-comment-icon  {
+  #delete-comment-icon  {
   color: $texas-rose;
   cursor: pointer;
 }
@@ -256,27 +250,6 @@ a:hover {
  }
 
 /* ------ chatroom ----- */
-
-#chatDisplay {
-  height: 200px;
-  overflow: scroll;
-}
-
-#chatDisplay em {
-  color: $astral-blue;
-}
-
-#chatDisplay strong {
-  font-weight: bolder;
-}
-
-#chat-input {
-  width: 60%;
-}
-
-#searchName {
-  width: 40%;
-}
 
 span.group-description {
   font-size: 15px;
@@ -313,4 +286,25 @@ span.group-description {
 
 #found-member {
   list-style: none;
+}
+
+#chatDisplay {
+  height: 200px;
+  overflow: scroll;
+}
+
+#chatDisplay em {
+  color: $astral-blue;
+}
+
+#chatDisplay strong {
+  font-weight: bolder;
+}
+
+#chat-input {
+  width: 60%;
+}
+
+#searchName {
+  width: 40%;
 }
