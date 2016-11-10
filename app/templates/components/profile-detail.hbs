@@ -4,7 +4,7 @@
   {{member.firstName}} {{member.lastName}}
   <div class="row">
     <div class="col-md-9">
-      {{add-post savePost="savePost" member=member}}
+      {{add-post savePost="savePost" member=session.currentUser}}
       <h4>News Feed:</h4>
       {{#each sortedPosts as |post|}}
         {{post-tile post=post deletePost="deletePost" updatePost="updatePost" saveComment="saveComment" member=member}}

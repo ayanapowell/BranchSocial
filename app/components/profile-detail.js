@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  session: Ember.inject.service(),
   sortBy: ['date:desc'],
   sortedPosts: Ember.computed.sort('member.posts', 'sortBy'),
   actions: {
