@@ -107,6 +107,11 @@ a:hover {
   }
 }
 
+#add-user-to-group{
+  color: $ocean-green;
+  margin-left: 5px;
+}
+
 #profile-img {
   width: 180px;
   height: 180px;
@@ -206,12 +211,14 @@ a:hover {
   width: auto;
   border-radius: 50%;
 
+
 }
 
 #post-image {
   height: 70px;
   width: auto;
   border-radius: 50%;
+  margin-right: 5px;
 
 }
 
@@ -228,7 +235,7 @@ a:hover {
  #post-content {
    margin-bottom: 0 !important;
  }
- 
+
 /* ------ chatroom ----- */
 
 #chatDisplay {
@@ -259,9 +266,8 @@ span.group-description {
   font-weight: lighter;
 }
 
-.trash {
+.remove {
   color: $texas-rose;
-  padding-left: 6px;
 }
 
 .trash:hover {
@@ -280,4 +286,12 @@ span.group-description {
   padding-top: 12px;
   padding-left: 12px;
   letter-spacing: 0.5px;
+}
+
+#current-members {
+  list-style: none;
+}
+
+#found-member {
+  list-style: none;
 }

@@ -2,24 +2,24 @@
   <h4>Current Members:</h4>
   <ul>
     {{#each members as |member|}}
-      <li>
+      <li id="current-members">
+        <i {{action 'removeFromGroup' member group}} class="remove icon"></i>
         {{#link-to 'member-profile' member.id}}{{member.screenName}}{{/link-to}}
-        <i {{action 'removeFromGroup' member group}} class="trash icon"></i>
       </li>
     {{/each}}
   </ul>
   <hr>
-  <h3>Add a member to this Group!</h3>
+  <h3>Add a Member</h3>
   <form id="searchName">
-    <label>Input member's screenname:</label>
-    {{input value=searchTerm class="form-control" placeholder="screenname"}}
+    <label>Input member's screen name:</label>
+    {{input value=searchTerm class="form-control"}}
     <button class="ui button tiny" {{action 'searchName'}}>Search</button>
   </form>
 
   {{#if foundMember}}
-    <p>Found Member: {{foundMember.screenName}} <button {{action 'addToGroup' foundMember group}}>Add to group!</button></p>
-    <ul>
-      <li>{{foundMember.firstName}}({{foundMember.screenName}})</li>
+    <p>Found Member:</p>
+    <ul id="found-member">
+      <li> <img id="comment-image" src={{foundMember.avatar}}> {{foundMember.screenName}} <i {{action 'addToGroup' foundMember group}} id="add-user-to-group" class="add user icon"></i></li> 
     </ul>
   {{/if}}
 </div>

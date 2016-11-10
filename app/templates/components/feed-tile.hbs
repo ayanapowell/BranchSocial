@@ -22,8 +22,8 @@
   {{#if showForm}}
     <div class="form-group">
       {{input value=content placeholder=post.content class='form-control'}}
+      <button {{action 'updatePost' post}} class='ui button'>Update</button>
     </div>
-    <button {{action 'updatePost' post}} class='btn btn-primary'>Post</button>
   {{/if}}
   {{#each post.comments as |comment|}}
     {{comment-tile comment=comment}}
