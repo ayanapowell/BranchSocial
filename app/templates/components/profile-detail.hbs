@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-md-9">
       {{#each sortedPosts as |post|}}
-        {{post-tile post=post deletePost="deletePost" updatePost="updatePost" saveComment="saveComment" member=member}}
+        {{post-tile post=post deletePost="deletePost" updatePost="updatePost" saveComment="saveComment" member=member updateComment="updateComment" deleteComment="deleteComment"}}
       {{/each}}
     </div>
     <div class="col-md-2 col-md-offset-1">

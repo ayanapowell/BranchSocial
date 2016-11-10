@@ -25,7 +25,7 @@
   {{/if}}
 
   {{#each post.comments as |comment|}}
-    {{comment-tile comment=comment}}
+    {{comment-tile comment=comment updateComment="updateComment" deleteComment="deleteComment"}}
   {{/each}}
   <!-- Leave a comment -->
     <form>
