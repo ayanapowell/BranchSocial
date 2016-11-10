@@ -24,14 +24,14 @@
     <button {{action 'updatePost' post}} class="ui button">Update</button>
   {{/if}}
 
-<!-- Leave a comment -->
-  <form>
-    <div class="form-group">
-      {{input value=commentContent placeholder="Leave a comment" class="form-control"}}
-    </div>
-    <button {{action 'saveComment' post}} class="ui button">Comment</button>
-  </form>
   {{#each post.comments as |comment|}}
     {{comment-tile comment=comment}}
   {{/each}}
+  <!-- Leave a comment -->
+    <form>
+      <div class="form-group">
+        {{input value=commentContent placeholder="Leave a comment" class="form-control"}}
+      </div>
+      <button {{action 'saveComment' post}} class="ui button">Comment</button>
+    </form>
 </div>
