@@ -52,12 +52,18 @@ export default Ember.Route.extend({
           post.save();
         });
       });
-      // post.get('comments').addObject(newComment);
-      // member.get('comments').addObject(newComment);
-      // newComment.save().then(function() {
-      //   member.save();
-      //   post.save();
-      // });
+    },
+    updateComment(params, comment) {
+      Object.keys(params).forEach(function(key) {
+        if(params[key] !== undefined) {
+          comment.set(key, params[key]);
+        }
+      });
+      comment.save();
+      this.refresh();
+    },
+    deleteComment(params) {
+      params.destroyRecord();
     }
   }
 });
