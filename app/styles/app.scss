@@ -27,6 +27,10 @@ a {
   color: $ocean-green;
 }
 
+i {
+  cursor: pointer;
+}
+
 a:hover {
   color: $ocean-green;
   text-decoration: underline;
@@ -96,14 +100,17 @@ a:hover {
 
   .remove-connection {
     color: $texas-rose;
+    cursor: pointer;
   }
 
   .add-connection {
     color: $ocean-green;
+    cursor: pointer;
   }
 
   .pending-connection {
     color: $astral-blue;
+    cursor: pointer;
   }
 }
 
