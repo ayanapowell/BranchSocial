@@ -38,15 +38,26 @@ export default Ember.Route.extend({
       post.save();
     },
     saveComment(post, params) {
+      var _this = this;
       var newComment = this.store.createRecord('comment', params);
-      var member = params.member;
-
-      post.get('comments').addObject(newComment);
-      member.get('comments').addObject(newComment);
-      newComment.save().then(function() {
-        member.save();
-        post.save();
+      var memberEmail = params.member.email;
+      _this.get('store').query('member', {
+        orderBy: 'email',
+        equalTo: memberEmail
+      }).then(function(response) {
+        response.get('firstObject').get('comments').addObject(newComment);
+        post.get('comments').addObject(newComment);
+        newComment.save().then(function() {
+          response.save();
+          post.save();
+        });
       });
+      // post.get('comments').addObject(newComment);
+      // member.get('comments').addObject(newComment);
+      // newComment.save().then(function() {
+      //   member.save();
+      //   post.save();
+      // });
     }
   }
 });

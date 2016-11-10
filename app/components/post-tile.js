@@ -34,7 +34,7 @@ export default Ember.Component.extend({
       var params = {
         content: this.get('commentContent'),
         date: date,
-        member: this.get('member')
+        member: this.get('session').get('currentUser')
       };
 
       this.sendAction('saveComment', post, params);
