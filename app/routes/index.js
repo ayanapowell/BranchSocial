@@ -14,7 +14,10 @@ export default Ember.Route.extend({
     },
     registerMember(params){
       var newMember = this.store.createRecord('member', params);
-      newMember.save();
+      newMember.save().then(function() {
+        newMember.get('friends').addObject(newMember);
+        newMember.save();
+      });
       this.transitionTo('members');
     },
     signIn: function(provider, params) {

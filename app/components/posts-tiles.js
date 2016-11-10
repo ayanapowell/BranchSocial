@@ -34,6 +34,12 @@ export default Ember.Component.extend({
     saveComment(post, params) {
       console.log("post-tiles");
       this.sendAction('saveComment', post, params);
+    },
+    updateComment(params, comment) {
+      this.sendAction('updateComment', params, comment);
+    },
+    deleteComment(comment) {
+      this.sendAction('deleteComment', comment);
     }
   }
 });
