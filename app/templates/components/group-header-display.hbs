@@ -1,0 +1,16 @@
+<br>
+  <h2>{{group.name}}
+    <span class="group-description"> ~ {{group.description}} ~ </span>
+    &nbsp;
+    <i id="update-post-icon" {{action 'showForm'}} class="write small icon"></i>
+    <i id="delete-post-icon" {{action 'deleteGroup' group}} class="remove small icon"></i>
+  </h2>
+<br>
+
+{{#if showForm}}
+  <div class="form-group">
+    {{input value=group.name class='form-control'}}
+    {{input value=group.description class='form-control'}}
+    <button {{action 'updateGroup' group}} class='ui button'>Update</button>
+  </div>
+{{/if}}

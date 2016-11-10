@@ -6,10 +6,10 @@
         <img id="member-avatar" class="img-responsive" src={{model.member.avatar}} onerror="this.src='http://www.pngall.com/wp-content/uploads/2016/05/Branch-Free-Download-PNG.png'">
       {{/link-to}}
       <h3 class="text-center">Hello,
-      {{model.member.screenName}}!</h3>
+      {{model.member.firstName}}!</h3>
     </div>
     {{edit-member editInfo="editInfo" destroyMember="destroyMember" member=model.member}}
-    {{#link-to 'friends'}}<button class="ui button btn-block">Manage your connections</button>{{/link-to}}
+    {{#link-to 'friends'}}<button class="ui button btn-block">Manage Connections</button>{{/link-to}}
     <br><br>
     {{group-list member=model.member}}
     {{new-group member=model.member addNewGroup="addNewGroup"}}
@@ -17,6 +17,6 @@
   <div class="col-sm-8">
     {{add-post savePost="savePost" member=model.member}}
     <hr>
-    {{posts-tiles member=model.member deletePost="deletePost" updatePost="updatePost" saveComment="saveComment"}}
+    {{posts-tiles member=model.member deletePost="deletePost" updatePost="updatePost" saveComment="saveComment" updateComment="updateComment" deleteComment="deleteComment"}}
   </div>
 </div>

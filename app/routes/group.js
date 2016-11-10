@@ -11,6 +11,19 @@ export default Ember.Route.extend({
   },
 
   actions: {
+    deleteGroup(group) {
+      group.destroyRecord();
+      this.transitionTo('members');
+    },
+    updateGroup(params, group) {
+      Object.keys(params).forEach(function(key){
+        if(params[key] !== undefined){
+          group.set(key, params[key]);
+        }
+      });
+      group.save();
+      this.refresh();
+    },
     sendMessage(params){
       var newMessage = this.store.createRecord('message', params);
       var group = params.group;

@@ -14,22 +14,23 @@
     <div class="col-sm-10">
       <h4 id="post-content">{{post.content}}</h4>
       <em><small>{{moment-from-now post.date}}</small></em>
+      {{#if showForm}}
+        <div id="update-post-form">
+          {{input value=content placeholder=post.content class='form-control'}}
+          <button {{action 'updatePost' post}} class='ui button tiny'>Update</button>
+        </div>
+      {{/if}}
     </div>
   </div>
   <hr>
-
   <br>
-  {{#if showForm}}
-    <div class="form-group">
-      {{input value=content placeholder=post.content class='form-control'}}
-      <button {{action 'updatePost' post}} class='ui button'>Update</button>
-    </div>
-  {{/if}}
   {{#each post.comments as |comment|}}
-    {{comment-tile comment=comment}}
+    {{comment-tile comment=comment updateComment="updateComment" deleteComment="deleteComment"}}
   {{/each}}
   <form id="dashboard-comment">
     {{input value=commentContent placeholder="Leave a comment" class="form-control"}}
-    <button {{action 'saveComment' post}} class="ui button">Comment</button>
+    <button {{action 'saveComment' post}} class="ui button tiny">
+      <i class="comment icon"></i>
+      Comment</button>
   </form>
 </div>

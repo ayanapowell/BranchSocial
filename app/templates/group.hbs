@@ -1,4 +1,7 @@
-<br><h2>{{model.group.name}}<span class="group-description">{{model.group.description}}</span></h2><br>
+<div class="row">
+  {{group-header-display group=model.group deleteGroup="deleteGroup" updateGroup="updateGroup"}}
+</div>
+
 <div class="row">
   <div class="col-sm-9">
       <div class='well chatroom-well'>
@@ -11,7 +14,7 @@
       {{chat-member-add members=model.group.members group=model.group addMemberToGroup="addMemberToGroup" removeMemberFromGroup="removeMemberFromGroup"}}
     </div>
   <div class="col-sm-3">
-    <h4>Add inspiration and instant references!</h4>
+    <h4>Post inspiration and references here:</h4>
     {{add-group-post group=model.group member=model.member savePost="savePost"}}
     {{group-post-list posts=model.group.groupPosts deletePost="deletePost"}}
   </div>

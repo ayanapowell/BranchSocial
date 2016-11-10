@@ -113,9 +113,21 @@ a:hover {
 }
 
 #profile-img {
-  width: 180px;
-  height: 180px;
+  width: 250px;
+  height: 250px;
   object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  // display: block;
+  // margin: auto;
+}
+
+#friend-avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 5px;
+
 }
 
 #update-form {
@@ -131,6 +143,11 @@ a:hover {
 #add-post {
   margin: auto !important;
   text-align: right;
+}
+
+#update-post-form,
+#update-comment-form  {
+  padding-top: 20px;
 }
 
 #delete-account {
@@ -222,12 +239,14 @@ a:hover {
 
 }
 
-#delete-post-icon {
+#delete-post-icon,
+#delete-comment-icon  {
   color: $texas-rose;
   cursor: pointer;
 }
 
- #update-post-icon {
+ #update-post-icon,
+  #update-comment-icon {
    color: $ocean-green;
    cursor: pointer;
  }

@@ -1,21 +1,19 @@
 <div class="profile-detail">
-  <img id="profile-img" src={{member.avatar}} onerror="this.src='http://www.pngall.com/wp-content/uploads/2016/05/Branch-Free-Download-PNG.png'">
-  {{member.screenName}}
-  {{member.firstName}} {{member.lastName}}
+  <h2>{{member.firstName}}'s Profile</h2>
+  <!-- <img id="profile-img" src={{member.avatar}} onerror="this.src='http://www.pngall.com/wp-content/uploads/2016/05/Branch-Free-Download-PNG.png'"> -->
   <div class="row">
     <div class="col-md-9">
-      {{add-post savePost="savePost" member=session.currentUser}}
-      <h4>News Feed:</h4>
       {{#each sortedPosts as |post|}}
         {{post-tile post=post deletePost="deletePost" updatePost="updatePost" saveComment="saveComment" member=member}}
       {{/each}}
     </div>
     <div class="col-md-2 col-md-offset-1">
-      <h4>Your friends</h4>
+      <h3>Connections</h3>
       {{#each member.friends as |friend|}}
-        {{#link-to 'member-profile' friend.id}} {{friend.screenName}}{{/link-to}}
-        {{#link-to 'member-profile' friend.id}}{{friend.firstName}} {{friend.lastName}}{{/link-to}}
-        <img src={{friend.avatar}} onerror="this.src='http://www.pngall.com/wp-content/uploads/2016/05/Branch-Free-Download-PNG.png'">
+      <br>
+        <img id="friend-avatar" src={{friend.avatar}} onerror="this.src='http://www.pngall.com/wp-content/uploads/2016/05/Branch-Free-Download-PNG.png'">
+        {{#link-to 'member-profile' friend.id}} {{friend.firstName}} {{friend.lastName}}{{/link-to}}
+        <br>
       {{/each}}
     </div>
   </div>

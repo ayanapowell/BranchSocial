@@ -39,6 +39,12 @@ export default Ember.Component.extend({
       };
       $('#dashboard-comment').trigger('reset');
       this.sendAction('saveComment', post, params);
+    },
+    updateComment(params, comment) {
+      this.sendAction('updateComment', params, comment);
+    },
+    deleteComment(comment) {
+      this.sendAction('deleteComment', comment);
     }
   }
 });
