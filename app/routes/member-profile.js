@@ -6,13 +6,25 @@ export default Ember.Route.extend({
   },
   actions: {
     savePost(params) {
-      console.log(params);
+      var _this = this;
       var newPost = this.store.createRecord('post', params);
-      var member = params['member'];
-      member.get('posts').addObject(newPost);
-      newPost.save().then(function() {
-        return member.save();
+      var memberEmail = params.member.email;
+      _this.get('store').query('member', {
+        orderBy: 'email',
+        equalTo: memberEmail
+      }).then(function(response) {
+        console.log(response.get('firstObject').get('posts'));
+        response.get('firstObject').get('posts').addObject(newPost);
+        newPost.save().then(function() {
+          response.save();
+          // this.refresh(); not working
+        });
       });
+      // var member = params['member'];
+      // member.get('posts').addObject(newPost);
+      // newPost.save().then(function() {
+      //   return member.save();
+      // });
     },
     deletePost(params) {
       params.destroyRecord();
