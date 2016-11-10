@@ -36,7 +36,7 @@ export default Ember.Component.extend({
         date: date,
         member: this.get('session').get('currentUser')
       };
-
+      $('#profile-comment').trigger('reset');
       this.sendAction('saveComment', post, params);
     },
     updateComment(params, comment) {
