@@ -128,6 +128,11 @@ a:hover {
   text-align: right;
 }
 
+#update-post-form,
+#update-comment-form  {
+  padding-top: 20px;
+}
+
 #delete-account {
   color: $texas-rose;
 }
@@ -215,12 +220,14 @@ a:hover {
 
 }
 
-#delete-post-icon {
+#delete-post-icon,
+#delete-comment-icon  {
   color: $texas-rose;
   cursor: pointer;
 }
 
- #update-post-icon {
+ #update-post-icon,
+  #update-comment-icon {
    color: $ocean-green;
    cursor: pointer;
  }
@@ -228,7 +235,7 @@ a:hover {
  #post-content {
    margin-bottom: 0 !important;
  }
- 
+
 /* ------ chatroom ----- */
 
 #chatDisplay {

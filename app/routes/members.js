@@ -81,6 +81,19 @@ export default Ember.Route.extend({
         post.save();
       });
       this.refresh();
+    },
+    updateComment(params, comment) {
+      Object.keys(params).forEach(function(key) {
+        if(params[key] !== undefined) {
+          comment.set(key, params[key]);
+        }
+      });
+      comment.save();
+      this.refresh();
+    },
+    deleteComment(comment) {
+      comment.destroyRecord();
+      this.refresh();
     }
   }
 });
