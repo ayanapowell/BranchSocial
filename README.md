@@ -14,7 +14,7 @@
 
 ## Description
 
-pdxBranch is a networking site for developers in the Portland, Oregon area. Users can collaborate on projects, chat, and share ideas.
+pdxBranch is a networking site for developers in the Portland, Oregon area to collaborate on projects, chat, and share ideas.
 
 * [Git](http://git-scm.com/)
 * [Node.js](http://nodejs.org/) (with NPM)
